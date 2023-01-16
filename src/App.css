@@ -4,6 +4,9 @@
   box-sizing: border-box;
 
 }
+html{
+  scroll-behavior: smooth;
+}
 .Nav_Container{
  width: 100%;
   background-color:#1b2430;
@@ -95,6 +98,58 @@
 }
 .intro>div>div>h1{
 font-size: 30px;
+}
+.about{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b2430;
+  color: white;
+  font-weight: bold;
+height: 500px;
+width: 100%;
+}
+.about>h1{
+  font-size: 30px;
+}
+.skill{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  color: white;
+  font-weight: bold;
+  height: 500px;
+  width: 100%;
+}
+.skill>h1{
+  font-size: 30px;
+}
+.project{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color:#1b2430;
+  color: white;
+  font-weight: bold;
+  height: 500px;
+  width: 100%;
+}
+.project>h1{
+  font-size: 30px;
+}
+.contact{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color:#000000;
+  color: white;
+  font-weight: bold;
+  height: 500px;
+  width: 100%;
+}
+.contact>h1{
+  font-size: 30px;
 }
 
 @media screen and (max-width:1000px) {
@@ -233,6 +288,7 @@ font-size: 30px;
  box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
  padding: 40px 0 0  10px;
  transition: 0.3s  ease-in-out;
+ z-index: 10;
   }
   #navitems li{
     margin-bottom: 25px;
@@ -274,7 +330,7 @@ font-size: 30px;
   .intro>div>img{
     width:auto;
     height: auto;
-   padding: 2px;
+   
     border-radius: 50%;
    
   }
