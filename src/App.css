@@ -62,6 +62,7 @@ html{
 		opacity: 1;
 	}
 } */
+
 #mobile{
   display: none;
 }
@@ -85,7 +86,7 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
- 
+  text-shadow: 3px 2px;
   height: 500px;
   width: 550px;
 
@@ -96,34 +97,78 @@ html{
   height: 90%;
   border-radius: 50%;
 }
-.intro>div>div>h1{
-font-size: 30px;
+.name{
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 40px blue, 0 0 50px darkblue;
 }
+.name1{
+  color: rgb(246, 252, 247);
+  text-shadow: 1px 1px 2px black, 0 0 10px rgb(0, 162, 255), 0 0 5px rgb(49, 245, 10);
+  width: 80%;
+  height: auto;
+  margin: auto;
+  font-size: 30px;
+  padding: 5px;
+  padding-bottom: 10px;
+}
+
 .about{
   display: grid;
-  justify-content: center;
-  align-items: center;
+ grid-template-columns: 100%;
+ grid-template-rows: 100px auto;
+ justify-content: center;
+ 
   background-color: #1b2430;
   color: white;
   font-weight: bold;
-height: 500px;
+height: auto;
 width: 100%;
 }
-.about>h1{
-  font-size: 30px;
+.about>div>h1{
+  font-size: 37px;
+  text-align: center;
 }
 .skill{
   display: grid;
-  justify-content: center;
-  align-items: center;
+ grid-template-columns: 100%;
+ grid-template-rows: 100px auto;
+ justify-content: center;
+ align-items: center;
   background-color: #000000;
   color: white;
   font-weight: bold;
-  height: 500px;
-  width: 100%;
+height: auto;
+width: 100%;
+padding: 10px;
 }
-.skill>h1{
-  font-size: 30px;
+.skill>div>h1{
+  font-size: 37px;
+  text-align: center;
+}
+.skillsbox{
+width: 150px;
+height: 200px ;
+border-radius: 10px;
+background-color: rgb(76, 81, 82);
+display: grid;
+grid-template-columns: 100%;
+grid-template-rows: 80% 20%;
+justify-content: center;
+align-items: center;
+text-align: center;
+margin-top: 10px;
+
+}
+.skillsbox:hover{
+  box-shadow: rgba(63, 157, 245, 0.35) 25px 15px 150px;
+  background-color: gray;
+}
+.skillsimg{
+  display: grid;
+  grid-template-columns: repeat(5,19%);
+  justify-content: center;
+  align-items: center;
+ 
 }
 .project{
   display: grid;
@@ -242,6 +287,12 @@ width: 100%;
   .intro>div>div>h1{
   font-size: 30px;
   }
+  .skillsimg{
+    display: grid;
+    grid-template-columns: repeat(3,29%);
+    justify-content: center;
+    align-items: center;
+  }
   
 }
 
@@ -337,6 +388,18 @@ width: 100%;
   .intro>div>div>h1{
   font-size: 30px;
   }
+  .skillsimg{
+    display: grid;
+    grid-template-columns: repeat(2,45%);
+    justify-content: center;
+    align-items: center;
+  }
+  .skillsbox{
+    width: 200px;
+    height: 250px ;
+   
+    
+    }
   
 }
 
