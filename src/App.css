@@ -172,17 +172,55 @@ margin-top: 10px;
 }
 .project{
   display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px auto;
   justify-content: center;
   align-items: center;
   background-color:#1b2430;
   color: white;
   font-weight: bold;
-  height: 500px;
+  height: auto;
   width: 100%;
+  text-align: center;
 }
-.project>h1{
+.project>div>h1{
   font-size: 30px;
 }
+
+.projectbox{
+  width: 450px;
+  height: 550px ;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 40% 60%;
+  justify-content: center;
+ align-items: center;
+  margin-top: 5px;
+  color: #000000;
+  
+  }
+  .projectbox:hover{
+    box-shadow: rgba(63, 157, 245, 0.35) 25px 15px 150px;
+    background-color: gray;
+    color: white;
+  }
+
+  .showbox{
+    display: grid;
+    grid-template-columns: repeat(2,45%);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .projectbox>div:nth-child(2){
+   text-align: justify;
+   margin-top: 55px;
+   font-size: 15px;
+   padding: 5px;
+  }
 .contact{
   display: grid;
   justify-content: center;
@@ -196,6 +234,25 @@ margin-top: 10px;
 .contact>h1{
   font-size: 30px;
 }
+.button-21 {
+  align-items: center;
+ 
+  background-color: #3EB2FD;
+ 
+  border-radius: 100px;
+ 
+  color: #FFFFFF;
+  cursor: pointer;
+  
+  font-family: CircularStd,sans-serif;
+ margin-top: 5px;
+ 
+  padding: 6px 20px;
+
+  
+}
+
+
 
 @media screen and (max-width:1000px) {
   .Nav_Container{
@@ -293,6 +350,27 @@ margin-top: 10px;
     justify-content: center;
     align-items: center;
   }
+  .showbox{
+    display: grid;
+    grid-template-columns:90%;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .projectbox{
+    width: 90%;
+    height:auto;
+   align-items: center;
+   justify-content: center;
+    gap:5px
+    }
+    .skillsbox{
+      width:95%;
+      height: 250px ;
+     
+      
+      }
   
 }
 
@@ -395,13 +473,31 @@ margin-top: 10px;
     align-items: center;
   }
   .skillsbox{
-    width: 200px;
+    width:90%;
     height: 250px ;
    
     
     }
+    .showbox{
+      display: grid;
+      grid-template-columns: 90%;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+     
+    }
+    .projectbox{
+      width: 95%;
+      height: auto ;
+     justify-content: center;
+     align-items: center;
+      
+      }
   
 }
+
+
+
 
 
 
