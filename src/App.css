@@ -174,7 +174,7 @@ margin-top: 10px;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100px auto;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-color:#1b2430;
   color: white;
@@ -182,6 +182,7 @@ margin-top: 10px;
   height: auto;
   width: 100%;
   text-align: center;
+  gap: 10px;
 }
 .project>div>h1{
   font-size: 30px;
@@ -195,11 +196,12 @@ margin-top: 10px;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 40% 60%;
-  justify-content: center;
- align-items: center;
+ 
   margin-top: 5px;
   color: #000000;
-  
+  justify-content: center;
+
+  align-items: center;
   }
   .projectbox:hover{
     box-shadow: rgba(63, 157, 245, 0.35) 25px 15px 150px;
@@ -221,7 +223,7 @@ margin-top: 10px;
    font-size: 15px;
    padding: 5px;
   }
-.contact{
+.calender{
   display: grid;
   justify-content: center;
   align-items: center;
@@ -233,6 +235,17 @@ margin-top: 10px;
 }
 .contact>h1{
   font-size: 30px;
+}
+.contact{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color:#ffffff;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  height: 500px;
+  width: 100%;
+  gap: 50px;
 }
 .button-21 {
   align-items: center;
