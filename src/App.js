@@ -1,4 +1,7 @@
-import { Button, Img } from "@chakra-ui/react";
+import { Button, Img, Text , FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,Input,Textarea} from "@chakra-ui/react";
 import { useState } from "react";
 import "./App.css";
 
@@ -401,11 +404,21 @@ function App() {
 	
       </center>
 </div>
-
+<center style={{fontSize:"35px",color:"#0A7AD6",fontWeight:"bold"}}>HAVE A PROJECT? OR JUST LOOKING TO HIRE?</center>
 <div id="contactme" className="contact">
        
-  <div><Img src="https://avighnaclasses.com/wp-content/uploads/2022/12/81732-contact-us.gif" width="500px" height="auto" alt="form"/></div>   
-  <div>Hi</div>   
+  <div className="hideform"><Img src="https://avighnaclasses.com/wp-content/uploads/2022/12/81732-contact-us.gif" width="500px" height="auto" alt="form"/></div>   
+  <FormControl isRequired>
+  <FormLabel>First name</FormLabel>
+  <Input placeholder='First name' />
+  <FormLabel>Email</FormLabel>
+  <Input placeholder='Enter Email' />.
+  <Textarea    size='sm'
+        placeholder='Leave you message here' />
+         <button class="button-21" role="button">
+                Submit
+                </button>
+</FormControl>
      
 </div>
     </div>

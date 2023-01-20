@@ -237,7 +237,8 @@ margin-top: 10px;
   font-size: 30px;
 }
 .contact{
-  display: flex;
+  display: grid;
+  grid-template-columns: 47% 47%;
   justify-content: space-around;
   align-items: center;
   background-color:#ffffff;
@@ -247,6 +248,8 @@ margin-top: 10px;
   width: 100%;
   gap: 50px;
 }
+
+
 .button-21 {
   align-items: center;
  
@@ -505,6 +508,13 @@ margin-top: 10px;
      justify-content: center;
      align-items: center;
       
+      }
+      .hideform{
+        display:none;
+
+      }
+      .contact{
+        margin: 20px;
       }
   
 }
