@@ -268,7 +268,16 @@ margin-top: 10px;
 
   
 }
+.github{
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  gap: 30px;
+  margin-top: 10px;
 
+
+  
+}
 input{
   border: 1px solid gray;
   border-radius: 10px;
@@ -545,6 +554,12 @@ textarea{
       
       input{
         width: 90%;
+      }
+      .github{
+        display: flex;
+        justify-content: center;
+
+        
       }
   
 }

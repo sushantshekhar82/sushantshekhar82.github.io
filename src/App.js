@@ -332,7 +332,7 @@ function App() {
                   Chakra UI
                 </button>
               </span>
-              <span style={{display:"flex",justifyContent:"center",alignItems:"center",gap:"20px",marginTop:"5px"}}><a href="https://github.com/sushantshekhar82/Myntra.com" target="_blank"> <svg
+              <span  className="github"><a href="https://github.com/sushantshekhar82/Myntra.com" target="_blank"> <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="30"
@@ -381,7 +381,7 @@ function App() {
                   Render
                 </button>
               </span>
-              <span style={{display:"flex",justifyContent:"center",alignItems:"center",gap:"20px",marginTop:"5px",padding:"15px"}}><a href="https://github.com/sushantshekhar82/Bluemercury.com" target="_blank"> <svg
+              <span  className="github"><a href="https://github.com/sushantshekhar82/Bluemercury.com" target="_blank"> <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="30"
