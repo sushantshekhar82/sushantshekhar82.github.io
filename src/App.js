@@ -4,10 +4,14 @@ import { Button, Img, Text , FormControl,
   FormHelperText,Input,Textarea} from "@chakra-ui/react";
 import { useState } from "react";
 import "./App.css";
-
+import { useToast } from '@chakra-ui/react'
 function App() {
   const data = [{ url: "" }];
+  const toast = useToast();
   const [click, setClick] = useState(true);
+  const[name,setName]=useState("")
+  const[email,setEmail]=useState("")
+  const[messsage,setMessage]=useState("")
   return (
     <div className="App">
       <div className="Nav_Container ">
@@ -377,7 +381,7 @@ function App() {
                   Render
                 </button>
               </span>
-              <span style={{display:"flex",justifyContent:"center",alignItems:"center",gap:"20px",marginTop:"5px"}}><a href="https://github.com/sushantshekhar82/Bluemercury.com" target="_blank"> <svg
+              <span style={{display:"flex",justifyContent:"center",alignItems:"center",gap:"20px",marginTop:"5px",padding:"15px"}}><a href="https://github.com/sushantshekhar82/Bluemercury.com" target="_blank"> <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="30"
@@ -395,31 +399,50 @@ function App() {
         <center>Calender</center>
       <center>
 <div style={{display: "flex",gap:"10px",flexWrap:"wrap",justifyContent:"center",alignItems:"center"}}>
-<Img align="center" src="https://github-readme-stats.vercel.app/api?username=sushantshekhar82&show_icons=true&locale=en&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40" alt="sushantshekhar82" width="400px" />
- <Img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=sushantshekhar82&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40" alt="sushantshekhar82" width="400px"  />
+<img className="stats" align="center" src="https://github-readme-stats.vercel.app/api?username=sushantshekhar82&show_icons=true" alt="sushantshekhar82"/>
+ <Img className="stats" align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=sushantshekhar82&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40" alt="sushantshekhar82"  />
 	</div>
 	</center>
 	<center>
-	<Img  src="https://github-readme-stats.vercel.app/api/top-langs?username=sushantshekhar82&show_icons=true&locale=en&layout=compact&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40" alt="sushantshekhar82" />
+	<Img className="stats"  src="https://github-readme-stats.vercel.app/api/top-langs?username=sushantshekhar82&show_icons=true&locale=en&layout=compact&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40" alt="sushantshekhar82" />
 	
       </center>
 </div>
 <center style={{fontSize:"35px",color:"#0A7AD6",fontWeight:"bold"}}>HAVE A PROJECT? OR JUST LOOKING TO HIRE?</center>
-<div id="contactme" className="contact">
+<div id="contactme" className="contact" >
        
   <div className="hideform"><Img src="https://avighnaclasses.com/wp-content/uploads/2022/12/81732-contact-us.gif" width="500px" height="auto" alt="form"/></div>   
-  <FormControl isRequired>
-  <FormLabel>First name</FormLabel>
-  <Input placeholder='First name' />
-  <FormLabel>Email</FormLabel>
-  <Input placeholder='Enter Email' />.
-  <Textarea    size='sm'
-        placeholder='Leave you message here' />
-         <button class="button-21" role="button">
+ <div className="form"><Text>First Name</Text>
+<input type="text" value={name} onChange={(e)=>setName(e.target.value)} placeholder="Enter Your Name" required/>
+<Text>Email</Text>
+<input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Enter Your Email" required/>
+<Text>Leave Your Message here</Text>
+<textarea value={messsage} onChange={(e)=>setMessage(e.target.value)} placeholder="Leave your messsage here"></textarea><br/>
+<button onClick={()=>{
+  if(name!==""&& email!=="" && messsage!==""){
+    toast({
+      title: 'Thank you , I will connect soon',
+      
+      status: 'success',
+      duration: 5000,
+      isClosable: true,
+    })
+   
+  }else{
+    toast({
+      title: 'Enter all Fields',
+      
+      status: 'error',
+      duration: 5000,
+      isClosable: true,
+    })
+  }
+}} class="button-21" role="button">
                 Submit
-                </button>
-</FormControl>
-     
+                </button></div>
+
+ 
+
 </div>
     </div>
   );
