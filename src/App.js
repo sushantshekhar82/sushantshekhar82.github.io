@@ -47,15 +47,15 @@ function App() {
             <li>
               {" "}
               <a download href="./Sushant_Shekhar_Resume.pdf">
-                {" "}
-                <Button
+               
+              <Button
                   backgroundColor={"green.400"}
                   style={{ display: "inline-block", zIndex: "1" }}
                   zIndex={0}
                 >
                   Resume
-                </Button>
-              </a>
+                </Button></a> 
+             
             </li>
             <span
               style={{
