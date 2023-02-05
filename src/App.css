@@ -189,8 +189,8 @@ margin-top: 10px;
 }
 
 .projectbox{
-  width: 450px;
-  height: 550px ;
+  width: 600px;
+  height: 650px ;
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
   display: grid;
@@ -200,7 +200,7 @@ margin-top: 10px;
   margin-top: 5px;
   color: #000000;
   justify-content: center;
-
+padding: 10px;
   align-items: center;
   }
   .projectbox:hover{
@@ -217,9 +217,13 @@ margin-top: 10px;
     align-items: center;
    
   }
+  .projectbox>div:nth-child(1){
+  
+    margin-top: 60px;
+  }
   .projectbox>div:nth-child(2){
    text-align: justify;
-   margin-top: 55px;
+   margin-top: 60px;
    font-size: 15px;
    padding: 5px;
   }
@@ -397,11 +401,13 @@ textarea{
    
   }
   .projectbox{
-    width: 90%;
+   width: 90%;
     height:auto;
    align-items: center;
    justify-content: center;
-    gap:5px
+   margin: auto;
+   
+    padding: 25px;
     }
     .skillsbox{
       width:95%;
@@ -409,6 +415,18 @@ textarea{
      
       
       }
+      
+      .projectbox>div:nth-child(1){
+       
+      
+        padding: 5px;
+      }
+      .projectbox>div:nth-child(2){
+        text-align: justify;
+        margin-top: 10px;
+        font-size: 15px;
+        padding: 5px;
+       }
   
 }
 
@@ -530,6 +548,7 @@ textarea{
      justify-content: center;
      align-items: center;
      padding: 10px;
+
       
       }
       .hideform{
@@ -561,6 +580,17 @@ textarea{
 
         
       }
+      .projectbox>div:nth-child(1){
+       
+        margin-top: 0px;
+       
+      }
+      .projectbox>div:nth-child(2){
+        text-align: justify;
+        margin-top: 10px;
+        font-size: 15px;
+        padding: 5px;
+       }
   
 }
 

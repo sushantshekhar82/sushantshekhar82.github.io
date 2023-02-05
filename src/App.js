@@ -46,7 +46,7 @@ function App() {
             </li>
             <li>
               {" "}
-              <a download href="./Sushant_Shekhar_Resume.pdf">
+              <a  href="https://drive.google.com/file/d/1xMMFWpietjNymM1NeB3wafLPa4iBI9q3/view" download="./Sushant_Shekhar_Resume.pdf">
                
               <Button
                   backgroundColor={"green.400"}
@@ -303,11 +303,11 @@ function App() {
 
             <div>
               <center>
-                <h1 style={{ fontSize: "22px", lineHeight: "25px" }}>
+                <h1 style={{ fontSize: "30px", lineHeight: "25px" }}>
                   Myntra Clone
                 </h1>
               </center>
-              <h2 style={{ fontSize: "18px", lineHeight: "25px" }}>
+              <h2 style={{ fontSize: "18px", lineHeight: "25px",marginTop:"10px" }}>
                  Myntra is a famous branded cloths Ecommerce website which
                 gives you wide varieties of fashionable and branded clothes and
                 many more.Here you can shop any  items very easily.
@@ -340,25 +340,25 @@ function App() {
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z" />
-                  </svg></a> <a href="myntraclonedecember.netlify.app/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a></span>
+                  </svg></a> <a href="https://myntraclonedecember.netlify.app/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a></span>
             </div>
           </div>  
           <div className="projectbox">
             <div>
               <Img
                 src="./bluemercury.jpeg"
-                alt="myntraclone"
+                alt="blue mercury clone"
                 borderRadius={"10px"}
               />
             </div>
 
             <div>
               <center>
-                <h1 style={{ fontSize: "22px", lineHeight: "25px" }}>
+                <h1 style={{ fontSize: "30px", lineHeight: "25px" }}>
                  Bluemercury Clone
                 </h1>
               </center>
-              <h2 style={{ fontSize: "18px", lineHeight: "30px" }}>
+              <h2 style={{ fontSize: "18px", lineHeight: "30px",marginTop:"10px" }}>
               Bluemercury is a skincare product Ecommerce website which gives you wide varieties of branded skincare , makeup care and many more products.
               </h2>
               <span style={{ marginTop: "5px" }}>
@@ -393,10 +393,108 @@ function App() {
           
             </div>
           </div>  
+          <div className="projectbox">
+            <div>
+              <Img
+                src="./wrike.png"
+                alt="wrike clone"
+                borderRadius={"10px"}
+                width="100%"
+                height="auto"
+              />
+            </div>
+
+            <div>
+              <center>
+                <h1 style={{ fontSize: "30px", lineHeight: "25px" }}>
+                 Wrike.com
+                </h1>
+              </center>
+              <h2 style={{ fontSize: "18px", lineHeight: "25px",marginTop:"10px" }}>
+              Wrike is the most powerful work management software at your fingertips. 
+              It provides multiple features to manage your work and complete in fixed 
+              time span by using this web based software.
+              </h2>
+              <span style={{ marginTop: "5px" }}>
+              <button class="button-21" role="button">
+                  React
+                </button>
+                 <button class="button-21" role="button">
+                  Javascript
+                </button>
+                 <button class="button-21" role="button">
+                  Json Server
+                </button>
+                 <button class="button-21" role="button">
+                  Bootstrap 4
+                </button>
+                 <button class="button-21" role="button">
+                  Render
+                </button>
+                 <button class="button-21" role="button">
+                  Chakra UI
+                </button>
+              </span>
+              <span  className="github"><a href="https://github.com/sushantshekhar82/Wrike.com" target="_blank"> <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="Black"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z" />
+                  </svg></a> <a href="https://parallel-cast-unit4-project.netlify.app/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a></span>
+            </div>
+          </div>  
+          <div className="projectbox">
+            <div>
+              <Img
+                src="./jefit.png"
+                alt="Jefit clone"
+                borderRadius={"10px"}
+                width="100%"
+                height="auto"
+              />
+            </div>
+
+            <div>
+              <center>
+                <h1 style={{ fontSize: "30px", lineHeight: "25px" }}>
+                Jefit.com
+                </h1>
+              </center>
+              <h2 style={{ fontSize: "18px", lineHeight: "25px",marginTop:"10px" }}>
+              Jefit is an American fitness gym website. This website provides you all
+               the exercise tips and direct connect to the coach for better mentor. 
+              </h2>
+              <span style={{ marginTop: "5px" }}>
+              <button class="button-21" role="button">
+                 Javacript
+                </button>
+                 <button class="button-21" role="button">
+               HTML5
+                </button>
+                 <button class="button-21" role="button">
+                 CSS3
+                </button>
+                 
+              </span>
+              <span  className="github"><a href="https://github.com/sushantshekhar82/Jefit.com" target="_blank"> <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="Black"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z" />
+                  </svg></a> <a href="https://fancy-twilight-33906a.netlify.app/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a></span>
+            </div>
+          </div>   
         </div>
       </div>
       <div id="calender" className="calender">
         <center>Calender</center>
+        <center><img src="https://ghchart.rshah.org/sushantshekhar82" alt="sushantshekhar82" width="100%" height="500px" style={{margin:"5px"}} /></center>
       <center>
 <div style={{display: "flex",gap:"10px",flexWrap:"wrap",justifyContent:"center",alignItems:"center"}}>
 <img className="stats" align="center" src="https://github-readme-stats.vercel.app/api?username=sushantshekhar82&show_icons=true" alt="sushantshekhar82"/>
@@ -444,6 +542,7 @@ function App() {
  
 
 </div>
+<div></div>
     </div>
   );
 }
