@@ -1,18 +1,20 @@
-import { Button, Img, Text , FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,Input,Textarea} from "@chakra-ui/react";
+import { Button, Img, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import "./App.css";
-import { useToast } from '@chakra-ui/react'
+import { useToast } from "@chakra-ui/react";
+
+import { useTypewriter,Cursor,Typewriter } from "react-simple-typewriter";
+
 function App() {
-  const data = [{ url: "" }];
+  
   const toast = useToast();
   const [click, setClick] = useState(true);
-  const[name,setName]=useState("")
-  const[email,setEmail]=useState("")
-  const[messsage,setMessage]=useState("")
-  return (
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [messsage, setMessage] = useState("");
+
+
+  return ( 
     <div className="App">
       <div className="Nav_Container ">
         <div className="wrapper">
@@ -46,16 +48,18 @@ function App() {
             </li>
             <li>
               {" "}
-              <a  href="https://drive.google.com/file/d/1xMMFWpietjNymM1NeB3wafLPa4iBI9q3/view" download="./Sushant_Shekhar_Resume.pdf">
-               
-              <Button
+              <a
+                href="https://drive.google.com/file/d/1xMMFWpietjNymM1NeB3wafLPa4iBI9q3/view"
+                download="./Sushant_Shekhar_Resume.pdf"
+              >
+                <Button
                   backgroundColor={"green.400"}
                   style={{ display: "inline-block", zIndex: "1" }}
                   zIndex={0}
                 >
                   Resume
-                </Button></a> 
-             
+                </Button>
+              </a>
             </li>
             <span
               style={{
@@ -66,7 +70,11 @@ function App() {
               }}
             >
               <li>
-                <a href="https://github.com/sushantshekhar82" target="_blank">
+                <a
+                  href="https://github.com/sushantshekhar82"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
@@ -82,6 +90,7 @@ function App() {
                 <a
                   href="https://www.linkedin.com/in/sushantshekhar8/"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -105,40 +114,46 @@ function App() {
         </div>
       </div>
       <div id="sushant_shekhar" className="intro">
+      
         <div>
-          <img src="./profile.png" />
-        </div>
-        <div>
-          <h4 style={{ color: "blue", fontSize: "16px", marginTop: "5px" }}>
-            Hi there 👋🏽, i'm
+         
+          <h4 >
+            Hi there 👋🏽, i'm  
+
           </h4>
           <h1
-            style={{ color: "white", fontSize: "40px", fontWeight: "bold" }}
+           
             className="name"
           >
             Kumar Sushant Shekhar
           </h1>
           <h2
-            style={{ color: "#6e6f72", fontSize: "20px", fontWeight: "bold" }}
+         
           >
-            Full Stack Web Developer
+         <span >  <Typewriter words={['Full Stack Web Developer','FrontEnd','Backend']} loop={500} cursor cursorStyle={"|"} typeSpeed={100} deleteSpeed={100}/>
+         </span>
           </h2>
         </div>
       </div>
-      <div id="aboutme" className="about">
+
+      <div className="about">
         <div>
-          {" "}
           <h1 style={{ marginTop: "5px" }}>About me</h1>
         </div>
-        <div>
-          {" "}
-          <h2 className="name1">
-            Hi! My name is Sushant Shekhar and I am passionate about developing
-            scalable web applications and working across the entire stack. I am
-            looking to join a team with whom communication and teamwork are
-            paramount and continue my skill set while contributing to the
-            positive outcome of making people "richer, smarter, and happier"
-          </h2>
+        <div className="aboutgrid">
+          <div>
+            <img src="./profile.png" alt="" />
+          </div>
+          <div>
+            {" "}
+            <h2 className="name1">
+              Passion for developing scalable web applications and working
+              across the entire stack. I am looking to join a team with whom
+              communication and teamwork are paramount and continue my skill set
+              while contributing to the positive outcome of making people
+              "richer, smarter, and happier".
+            </h2>
+          </div>
         </div>
       </div>
       <div id="skills" className="skill">
@@ -307,32 +322,33 @@ function App() {
                   Myntra Clone
                 </h1>
               </center>
-              <h2 style={{ fontSize: "18px", lineHeight: "25px",marginTop:"10px" }}>
-                 Myntra is a famous branded cloths Ecommerce website which
-                gives you wide varieties of fashionable and branded clothes and
-                many more.Here you can shop any  items very easily.
+              <h2
+                style={{
+                  fontSize: "18px",
+                  lineHeight: "25px",
+                  marginTop: "10px",
+                }}
+              >
+                Myntra is a famous branded cloths Ecommerce website which gives
+                you wide varieties of fashionable and branded clothes and many
+                more.Here you can shop any items very easily.
               </h2>
               <span style={{ marginTop: "5px" }}>
-              <button class="button-21" role="button">
-                  React
-                </button>
-                 <button class="button-21" role="button">
-                  Javascript
-                </button>
-                 <button class="button-21" role="button">
-                  Json Server
-                </button>
-                 <button class="button-21" role="button">
-                  Bootstrap 4
-                </button>
-                 <button class="button-21" role="button">
-                  Render
-                </button>
-                 <button class="button-21" role="button">
-                  Chakra UI
-                </button>
+                <button class="button-21">React</button>
+                <button class="button-21">Javascript</button>
+                <button class="button-21">Json Server</button>
+                <button class="button-21">Bootstrap 4</button>
+                <button class="button-21">Render</button>
+                <button class="button-21">Chakra UI</button>
               </span>
-              <span  className="github"><a href="https://github.com/sushantshekhar82/Myntra.com" target="_blank"> <svg
+              <span className="github">
+                <a
+                  href="https://github.com/sushantshekhar82/Myntra.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="30"
@@ -340,9 +356,32 @@ function App() {
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z" />
-                  </svg></a> <a href="https://myntraclonedecember.netlify.app/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a></span>
+                  </svg>
+                </a>{" "}
+                <a
+                  href="https://myntraclonedecember.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-eye"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </a>
+              </span>
             </div>
-          </div>  
+          </div>
           <div className="projectbox">
             <div>
               <Img
@@ -355,33 +394,36 @@ function App() {
             <div>
               <center>
                 <h1 style={{ fontSize: "30px", lineHeight: "25px" }}>
-                 Bluemercury Clone
+                  Bluemercury Clone
                 </h1>
               </center>
-              <h2 style={{ fontSize: "18px", lineHeight: "30px",marginTop:"10px" }}>
-              Bluemercury is a skincare product Ecommerce website which gives you wide varieties of branded skincare , makeup care and many more products.
+              <h2
+                style={{
+                  fontSize: "18px",
+                  lineHeight: "30px",
+                  marginTop: "10px",
+                }}
+              >
+                Bluemercury is a skincare product Ecommerce website which gives
+                you wide varieties of branded skincare , makeup care and many
+                more products.
               </h2>
               <span style={{ marginTop: "5px" }}>
-              <button class="button-21" role="button">
-                  Javascript
-                  </button>
-                 <button class="button-21" role="button">
-                  Json Server
-                </button>
-                 <button class="button-21" role="button">
-                  API
-                </button>
-                 <button class="button-21" role="button">
-                 Css 3
-                </button>
-                 <button class="button-21" role="button">
-                  HTML5
-                </button>
-                 <button class="button-21" role="button">
-                  Render
-                </button>
+                <button class="button-21">Javascript</button>
+                <button class="button-21">Json Server</button>
+                <button class="button-21">API</button>
+                <button class="button-21">Css 3</button>
+                <button class="button-21">HTML5</button>
+                <button class="button-21">Render</button>
               </span>
-              <span  className="github"><a href="https://github.com/sushantshekhar82/Bluemercury.com" target="_blank"> <svg
+              <span className="github">
+                <a
+                  href="https://github.com/sushantshekhar82/Bluemercury.com"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {" "}
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="30"
@@ -389,10 +431,32 @@ function App() {
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z" />
-                  </svg></a> <a href="https://monumental-cassata-c694c6.netlify.app/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a></span>
-          
+                  </svg>
+                </a>{" "}
+                <a
+                  href="https://monumental-cassata-c694c6.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-eye"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </a>
+              </span>
             </div>
-          </div>  
+          </div>
           <div className="projectbox">
             <div>
               <Img
@@ -407,35 +471,37 @@ function App() {
             <div>
               <center>
                 <h1 style={{ fontSize: "30px", lineHeight: "25px" }}>
-                 Wrike.com
+                  Wrike.com
                 </h1>
               </center>
-              <h2 style={{ fontSize: "18px", lineHeight: "25px",marginTop:"10px" }}>
-              Wrike is the most powerful work management software at your fingertips. 
-              It provides multiple features to manage your work and complete in fixed 
-              time span by using this web based software.
+              <h2
+                style={{
+                  fontSize: "18px",
+                  lineHeight: "25px",
+                  marginTop: "10px",
+                }}
+              >
+                Wrike is the most powerful work management software at your
+                fingertips. It provides multiple features to manage your work
+                and complete in fixed time span by using this web based
+                software.
               </h2>
               <span style={{ marginTop: "5px" }}>
-              <button class="button-21" role="button">
-                  React
-                </button>
-                 <button class="button-21" role="button">
-                  Javascript
-                </button>
-                 <button class="button-21" role="button">
-                  Json Server
-                </button>
-                 <button class="button-21" role="button">
-                  Bootstrap 4
-                </button>
-                 <button class="button-21" role="button">
-                  Render
-                </button>
-                 <button class="button-21" role="button">
-                  Chakra UI
-                </button>
+                <button class="button-21">React</button>
+                <button class="button-21">Javascript</button>
+                <button class="button-21">Json Server</button>
+                <button class="button-21">Bootstrap 4</button>
+                <button class="button-21">Render</button>
+                <button class="button-21">Chakra UI</button>
               </span>
-              <span  className="github"><a href="https://github.com/sushantshekhar82/Wrike.com" target="_blank"> <svg
+              <span className="github">
+                <a
+                  href="https://github.com/sushantshekhar82/Wrike.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="30"
@@ -443,9 +509,32 @@ function App() {
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z" />
-                  </svg></a> <a href="https://parallel-cast-unit4-project.netlify.app/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a></span>
+                  </svg>
+                </a>{" "}
+                <a
+                  href="https://parallel-cast-unit4-project.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-eye"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </a>
+              </span>
             </div>
-          </div>  
+          </div>
           <div className="projectbox">
             <div>
               <Img
@@ -460,26 +549,33 @@ function App() {
             <div>
               <center>
                 <h1 style={{ fontSize: "30px", lineHeight: "25px" }}>
-                Jefit.com
+                  Jefit.com
                 </h1>
               </center>
-              <h2 style={{ fontSize: "18px", lineHeight: "25px",marginTop:"10px" }}>
-              Jefit is an American fitness gym website. This website provides you all
-               the exercise tips and direct connect to the coach for better mentor. 
+              <h2
+                style={{
+                  fontSize: "18px",
+                  lineHeight: "25px",
+                  marginTop: "10px",
+                }}
+              >
+                Jefit is an American fitness gym website. This website provides
+                you all the exercise tips and direct connect to the coach for
+                better mentor.
               </h2>
               <span style={{ marginTop: "5px" }}>
-              <button class="button-21" role="button">
-                 Javacript
-                </button>
-                 <button class="button-21" role="button">
-               HTML5
-                </button>
-                 <button class="button-21" role="button">
-                 CSS3
-                </button>
-                 
+                <button class="button-21">Javacript</button>
+                <button class="button-21">HTML5</button>
+                <button class="button-21">CSS3</button>
               </span>
-              <span  className="github"><a href="https://github.com/sushantshekhar82/Jefit.com" target="_blank"> <svg
+              <span className="github">
+                <a
+                  href="https://github.com/sushantshekhar82/Jefit.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
                     height="30"
@@ -487,62 +583,142 @@ function App() {
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z" />
-                  </svg></a> <a href="https://fancy-twilight-33906a.netlify.app/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a></span>
+                  </svg>
+                </a>{" "}
+                <a
+                  href="https://fancy-twilight-33906a.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-eye"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </a>
+              </span>
             </div>
-          </div>   
+          </div>
         </div>
       </div>
       <div id="calender" className="calender">
         <center>Calender</center>
-        <center><img src="https://ghchart.rshah.org/sushantshekhar82" alt="sushantshekhar82" width="100%" height="500px" style={{margin:"5px"}} /></center>
-      <center>
-<div style={{display: "flex",gap:"10px",flexWrap:"wrap",justifyContent:"center",alignItems:"center"}}>
-<img className="stats" align="center" src="https://github-readme-stats.vercel.app/api?username=sushantshekhar82&show_icons=true" alt="sushantshekhar82"/>
- <Img className="stats" align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=sushantshekhar82&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40" alt="sushantshekhar82"  />
-	</div>
-	</center>
-	<center>
-	<Img className="stats"  src="https://github-readme-stats.vercel.app/api/top-langs?username=sushantshekhar82&show_icons=true&locale=en&layout=compact&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40" alt="sushantshekhar82" />
-	
+        <center>
+          <img
+            src="https://ghchart.rshah.org/sushantshekhar82"
+            alt="sushantshekhar82"
+            width="100%"
+            height="500px"
+            style={{ margin: "5px" }}
+          />
+        </center>
+        <center>
+          <div
+            style={{
+              display: "flex",
+              gap: "10px",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              className="stats"
+              align="center"
+              src="https://github-readme-stats.vercel.app/api?username=sushantshekhar82&show_icons=true"
+              alt="sushantshekhar82"
+            />
+            <Img
+              className="stats"
+              align="center"
+              src="https://github-readme-streak-stats.herokuapp.com/?user=sushantshekhar82&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40"
+              alt="sushantshekhar82"
+            />
+          </div>
+        </center>
+        <center>
+          <Img
+            className="stats"
+            src="https://github-readme-stats.vercel.app/api/top-langs?username=sushantshekhar82&show_icons=true&locale=en&layout=compact&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40"
+            alt="sushantshekhar82"
+          />
+        </center>
+      </div>
+      <center
+        style={{ fontSize: "35px", color: "#0A7AD6", fontWeight: "bold" }}
+      >
+        HAVE A PROJECT? OR JUST LOOKING TO HIRE?
       </center>
-</div>
-<center style={{fontSize:"35px",color:"#0A7AD6",fontWeight:"bold"}}>HAVE A PROJECT? OR JUST LOOKING TO HIRE?</center>
-<div id="contactme" className="contact" >
-       
-  <div className="hideform"><Img src="https://avighnaclasses.com/wp-content/uploads/2022/12/81732-contact-us.gif" width="500px" height="auto" alt="form"/></div>   
- <div className="form"><Text>First Name</Text>
-<input type="text" value={name} onChange={(e)=>setName(e.target.value)} placeholder="Enter Your Name" required/>
-<Text>Email</Text>
-<input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Enter Your Email" required/>
-<Text>Leave Your Message here</Text>
-<textarea value={messsage} onChange={(e)=>setMessage(e.target.value)} placeholder="Leave your messsage here"></textarea><br/>
-<button onClick={()=>{
-  if(name!==""&& email!=="" && messsage!==""){
-    toast({
-      title: 'Thank you , I will connect soon',
-      
-      status: 'success',
-      duration: 5000,
-      isClosable: true,
-    })
-   
-  }else{
-    toast({
-      title: 'Enter all Fields',
-      
-      status: 'error',
-      duration: 5000,
-      isClosable: true,
-    })
-  }
-}} class="button-21" role="button">
-                Submit
-                </button></div>
+      <div id="contactme" className="contact">
+        <div className="hideform">
+          <Img
+            src="https://avighnaclasses.com/wp-content/uploads/2022/12/81732-contact-us.gif"
+            width="500px"
+            height="auto"
+            alt="form"
+          />
+        </div>
+        <div className="form">
+          <Text>First Name</Text>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Enter Your Name"
+            required
+          />
+          <Text>Email</Text>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter Your Email"
+            required
+          />
+          <Text>Leave Your Message here</Text>
+          <textarea
+            value={messsage}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Leave your messsage here"
+          ></textarea>
+          <br />
+          <button
+            onClick={() => {
+              if (name !== "" && email !== "" && messsage !== "") {
+                toast({
+                  title: "Thank you , I will connect soon",
 
- 
+                  status: "success",
+                  duration: 5000,
+                  isClosable: true,
+                });
+              } else {
+                toast({
+                  title: "Enter all Fields",
 
-</div>
-<div></div>
+                  status: "error",
+                  duration: 5000,
+                  isClosable: true,
+                });
+              }
+            }}
+            class="button-21"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+      <div></div>
     </div>
   );
 }

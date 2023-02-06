@@ -72,31 +72,32 @@ html{
 }
 .intro{
   display: grid;
-  grid-template-columns: 45% 45%;
+ 
   gap: 10px;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 500px;
-  background-color: #000000;
+  background-image: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydGZvbGlvJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&w=1000&q=80");
   
   color: white;
 }
-.intro>div:nth-child(1){
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 3px 2px;
-  height: 500px;
-  width: 550px;
+.intro>div>h4{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+    }
+    .intro>div>h1{
+      color: white;
+      font-size: 80px;
+      font-weight: bold;
+    }
+    .intro>div>h2{
+      color:yellow;
+      font-size: 60px;
+      font-weight: bold;
+    }
 
- 
-}
-.intro>div>img{
-  width: 90%;
-  height: 90%;
-  border-radius: 50%;
-}
 .name{
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 40px blue, 0 0 50px darkblue;
@@ -104,12 +105,12 @@ html{
 .name1{
   color: rgb(246, 252, 247);
   text-shadow: 1px 1px 2px black, 0 0 10px rgb(0, 162, 255), 0 0 5px rgb(49, 245, 10);
-  width: 80%;
+  width: 100%;
   height: auto;
   margin: auto;
-  font-size: 30px;
-  padding: 5px;
-  padding-bottom: 10px;
+  font-size: 25px;
+  padding: 2px;
+  padding-bottom: 5px;
 }
 
 .about{
@@ -127,6 +128,32 @@ width: 100%;
 .about>div>h1{
   font-size: 37px;
   text-align: center;
+}
+.aboutgrid{
+  display: grid;
+  grid-template-columns: 45% 45%;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+ background-color:#1b2430;
+  color: white;
+}
+.aboutgrid>div:nth-child(1){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 3px 2px;
+  height: 500px;
+  width: 550px;
+  background-color:#1b2430;
+ 
+}
+.aboutgrid>div>img{
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
 }
 .skill{
   display: grid;
@@ -348,6 +375,21 @@ textarea{
   }
   .intro{
     display: grid;
+   
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    background-image: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydGZvbGlvJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&w=1000&q=80");
+    background-repeat: repeat;
+    color: white;
+  }
+ 
+  
+  
+  .aboutgrid{
+    display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto auto;
    
@@ -362,28 +404,28 @@ textarea{
   }
   
  
-  .intro>div:nth-child(1){
+  .aboutgrid>div:nth-child(1){
     display: flex;
     justify-content: center;
     align-items: center;
-  
+    background-color:#1b2430;
     height: 500px;
     width: 550px;
   margin: auto;
    
   }
-  .intro>div:nth-child(2){
-   
+  .aboutgrid>div:nth-child(2){
+    background-color:#1b2430;
    margin: auto;
   text-align: center;
   font-size: 25px;
   }
-  .intro>div>img{
+  .aboutgrid>div>img{
     width: auto;
     height: auto;
     border-radius: 50%;
   }
-  .intro>div>div>h1{
+  .aboutgrid>div>div>h1{
   font-size: 30px;
   }
   .skillsimg{
@@ -427,6 +469,21 @@ textarea{
         font-size: 15px;
         padding: 5px;
        }
+       .intro>div>h4{
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+          }
+          .intro>div>h1{
+            color: white;
+            font-size: 60px;
+            font-weight: bold;
+          }
+          .intro>div>h2{
+            color:yellow;
+            font-size: 40px;
+            font-weight: bold;
+          }
   
 }
 
@@ -481,7 +538,7 @@ textarea{
   #mobile{
     display: block;
   }
-  .intro{
+ .aboutgrid{
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto auto;
@@ -492,36 +549,65 @@ textarea{
     width: 100%;
     height: auto;
     
-    background-color: #000000;
-    
+    background-color:#1b2430;
     color: white;
   }
   
-  .intro>div:nth-child(1){
+  .aboutgrid>div:nth-child(1){
     display: flex;
     justify-content: center;
     align-items: center;
-  
+    background-color:#1b2430;
     height: 400px;
     width: 100%;
   margin: auto;
 
    
   }
-  .intro>div:nth-child(2){
-   background-color: #000000;
+  .aboutgrid>div:nth-child(2){
+    background-color:#1b2430;
+   text-align: justify;
+   margin: 10px;
   
   }
-  .intro>div>img{
+  .aboutgrid>div>img{
     width:95%;
     height: auto;
    
     border-radius: 50%;
    
   }
-  .intro>div>div>h1{
+  .aboutgrid>div>div>h1{
   font-size: 30px;
   }
+  .intro{
+    display: grid;
+   
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    background-image: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydGZvbGlvJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&w=1000&q=80");
+    background-repeat: repeat;
+    color: white;
+  }
+  .intro>div>h4{
+color: white;
+font-size: 15px;
+font-weight: bold;
+  }
+  .intro>div>h1{
+    color: white;
+    font-size: calc(30px + 6 * ((100vw - 320px) / 680));
+    font-weight: bold;
+  }
+  .intro>div>h2{
+    color:yellow;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
   .skillsimg{
     display: grid;
     grid-template-columns: repeat(2,45%);
