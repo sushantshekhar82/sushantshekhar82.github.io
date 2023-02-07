@@ -3,18 +3,16 @@ import { useState } from "react";
 import "./App.css";
 import { useToast } from "@chakra-ui/react";
 
-import { useTypewriter,Cursor,Typewriter } from "react-simple-typewriter";
+import { useTypewriter, Cursor, Typewriter } from "react-simple-typewriter";
 
 function App() {
-  
   const toast = useToast();
   const [click, setClick] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [messsage, setMessage] = useState("");
 
-
-  return ( 
+  return (
     <div className="App">
       <div className="Nav_Container ">
         <div className="wrapper">
@@ -114,29 +112,32 @@ function App() {
         </div>
       </div>
       <div id="sushant_shekhar" className="intro">
-      
         <div>
-         
-          <h4 >
-            Hi there 👋🏽, i'm  
-
-          </h4>
-          <h1
-           
-            className="name"
-          >
-            Kumar Sushant Shekhar
-          </h1>
-          <h2
-         
-          >
-         <span >  <Typewriter words={['Full Stack Web Developer','FrontEnd','Backend']} loop={500} cursor cursorStyle={"|"} typeSpeed={100} deleteSpeed={100}/>
-         </span>
+          <h4>Hi there 👋🏽, i'm</h4>
+          <h1 className="name">Kumar Sushant Shekhar</h1>
+          <h2>
+            <span>
+              {" "}
+              <Typewriter
+                words={[
+                  "Full Stack Web Developer",
+                  "Always ready to learn",
+                  "FrontEnd",
+                  "Competitive programmer",
+                  "BackEnd",
+                ]}
+                loop={500}
+                cursor
+                cursorStyle={"|"}
+                typeSpeed={100}
+                deleteSpeed={100}
+              />
+            </span>
           </h2>
         </div>
       </div>
 
-      <div className="about">
+      <div id="aboutme" className="about">
         <div>
           <h1 style={{ marginTop: "5px" }}>About me</h1>
         </div>
@@ -718,7 +719,65 @@ function App() {
           </button>
         </div>
       </div>
-      <div></div>
+      <span className="contactdetail">
+      <a href="tel:8298937625">
+        <div className="contactbox">
+          <button class="button-22">
+            {" "}
+            <Text
+              bgGradient="linear(to-l,skyblue, green)"
+              bgClip="text"
+              fontSize="2xl"
+              fontWeight="extrabold"
+            >
+              Contact me @ +918298937625{" "}
+            </Text>
+          </button>
+        </div>
+        </a>
+        <a href="mailto:sushant.shekhar151997@gmail.com" target="_blank" rel="noreferrer">
+        <div className="contactbox">
+          
+            <button class="button-22">
+          
+              <Text
+                bgGradient="linear(to-l,#D95D39, #F0A202)"
+                bgClip="text"
+                fontSize="1xl"
+                fontWeight="extrabold"
+              >
+                Email me @ 
+                sushant.shekhar151997@gmail.com
+              </Text>
+            </button>
+         
+        </div>
+        </a>
+        <a
+            href="https://wa.me/8298937625?text=Hi%20this%20is%20sushant%20shekhar%2C%20Leave%20your%20message"
+            target="_blank"
+            rel="noreferrer"
+          >
+        <div className="contactbox">
+         
+            <button class="button-22">
+              {" "}
+              <Text
+                bgGradient="linear(to-l,green, yellow)"
+                bgClip="text"
+                fontSize="2xl"
+                fontWeight="extrabold"
+              >
+                WhatApp Me{" "}
+              </Text>
+            </button>
+          
+        </div>
+        </a>  
+      </span>
+      <div>
+        <div className="bottom"></div>
+      </div>
     </div>
   );
 }
