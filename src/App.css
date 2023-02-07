@@ -343,9 +343,10 @@ textarea{
 }
 .contactdetail{
 display: grid;
-grid-template-columns: 25% 45% 25%;
-gap: 5px;
-justify-content: space-evenly;
+grid-template-columns: 25% 52% 23%;
+
+margin:5px;
+justify-content: center;
 align-items: center;
 }
 .contactdetail>div{
@@ -531,6 +532,10 @@ align-items: center;
             display: flex;
             justify-content: center;
             align-items: center;
+            }
+            .button-22{
+              width: 100%;
+              height: 100px;
             }
   
 }
