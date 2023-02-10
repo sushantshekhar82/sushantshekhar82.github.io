@@ -148,11 +148,11 @@ function App() {
           <div>
             {" "}
             <h2 className="name1">
-              Passion for developing scalable web applications and working
-              across the entire stack. I am looking to join a team with whom
-              communication and teamwork are paramount and continue my skill set
-              while contributing to the positive outcome of making people
-              "richer, smarter, and happier".
+            Innovative, solution-driven web developer with proficiency in MERN 
+            and capable of writing production-ready code using HTML, CSS, and Javascript.
+             Proven experience in developing multiple web-based applications with a good 
+             knowledge of collaboration and can easily be adept with the work environment.
+             
             </h2>
           </div>
         </div>
