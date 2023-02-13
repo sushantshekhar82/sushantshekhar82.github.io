@@ -2,7 +2,7 @@ import { Button, Img, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import "./App.css";
 import { useToast } from "@chakra-ui/react";
-import { FaBeer ,FaWhatsapp} from "react-icons/fa";
+
 import { IoLogoWhatsapp} from "react-icons/io";
 import { MdEmail} from "react-icons/md"
 import { FiPhoneCall} from "react-icons/fi"
@@ -33,20 +33,20 @@ function App() {
             id="navitems"
             className={click ? "#navitems" : "#navitems active"}
           >
-            <li className="nav-link home">
-              <a href="#home"  >Home</a>
+            <li >
+              <a href="#home" className="nav-link home" >Home</a>
             </li>
-            <li className="nav-link about">
-              <a href="#about" >About</a>
+            <li >
+              <a href="#about" className="nav-link about" >About</a>
             </li>
-            <li className="nav-link skills">
-              <a href="#skills" >Skills</a>
+            <li >
+              <a href="#skills" className="nav-link skills">Skills</a>
             </li>
-            <li  className="nav-link projects">
-              <a href="#projects" >Projects</a>
+            <li  >
+              <a href="#projects" className="nav-link projects" >Projects</a>
             </li>
-            <li className="nav-link contact">
-              <a href="#contact" >Contact</a>
+            <li>
+              <a href="#contact"  className="nav-link contact">Contact</a>
             </li>
             <li>
               {" "}
