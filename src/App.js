@@ -2,6 +2,10 @@ import { Button, Img, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import "./App.css";
 import { useToast } from "@chakra-ui/react";
+import { FaBeer ,FaWhatsapp} from "react-icons/fa";
+import { IoLogoWhatsapp} from "react-icons/io";
+import { MdEmail} from "react-icons/md"
+import { FiPhoneCall} from "react-icons/fi"
 
 import { useTypewriter, Cursor, Typewriter } from "react-simple-typewriter";
 
@@ -14,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="Nav_Container ">
+      <div className="Nav_Container " id="nav-menu">
         <div className="wrapper">
           <img
             src="https://avatars.githubusercontent.com/u/105901300?v=4"
@@ -24,25 +28,25 @@ function App() {
             height="50px"
           />
         </div>
-        <div>
+        <div>s
           <ul
             id="navitems"
             className={click ? "#navitems" : "#navitems active"}
           >
-            <li>
-              <a href="#sushant_shekhar">Home</a>
+            <li className="nav-link home">
+              <a href="#home"  >Home</a>
             </li>
-            <li>
-              <a href="#aboutme">About</a>
+            <li className="nav-link about">
+              <a href="#about" >About</a>
             </li>
-            <li>
-              <a href="#skills">Skills</a>
+            <li className="nav-link skills">
+              <a href="#skills" >Skills</a>
             </li>
-            <li>
-              <a href="#projects">Projects</a>
+            <li  className="nav-link projects">
+              <a href="#projects" >Projects</a>
             </li>
-            <li>
-              <a href="#contactme">Contact</a>
+            <li className="nav-link contact">
+              <a href="#contact" >Contact</a>
             </li>
             <li>
               {" "}
@@ -54,6 +58,7 @@ function App() {
                   backgroundColor={"green.400"}
                   style={{ display: "inline-block", zIndex: "1" }}
                   zIndex={0}
+                  class="nav-link resume "  id="resume-button-1"
                 >
                   Resume
                 </Button>
@@ -111,14 +116,15 @@ function App() {
           ></i>
         </div>
       </div>
-      <div id="sushant_shekhar" className="intro">
+      <div id="home" className="intro">
         <div>
           <h4>Hi there 👋🏽, i'm</h4>
-          <h1 className="name">Kumar Sushant Shekhar</h1>
+          <h1 className="name"  id="user-detail-name">Kumar Sushant Shekhar</h1>
           <h2>
             <span>
               {" "}
               <Typewriter
+              id="user-detail-intro"
                 words={[
                   "Full Stack Web Developer",
                   "Always ready to learn",
@@ -137,13 +143,13 @@ function App() {
         </div>
       </div>
 
-      <div id="aboutme" className="about">
+      <div id="about" className="about1 about section">
         <div>
           <h1 style={{ marginTop: "5px" }}>About me</h1>
         </div>
         <div className="aboutgrid">
           <div>
-            <img src="./profile.png" alt="" />
+            <img src="./profile.png" alt="sushant shekhar" class="home-img" />
           </div>
           <div>
             {" "}
@@ -164,7 +170,7 @@ function App() {
         </div>
         <div className="skillsimg">
           <div className="skillsbox">
-            <div>
+            <div class="skills-card-img">
               {" "}
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <g fill="#61DAFB">
@@ -173,10 +179,10 @@ function App() {
                 </g>
               </svg>
             </div>
-            <div>React</div>
+            <div class="skills-card-name">React</div>
           </div>
           <div className="skillsbox">
-            <div>
+            <div class="skills-card-img">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <path
                   fill="#83CD29"
@@ -184,10 +190,10 @@ function App() {
                 />
               </svg>{" "}
             </div>
-            <div>NodeJs</div>
+            <div class="skills-card-name">NodeJs</div>
           </div>
           <div className="skillsbox">
-            <div>
+            <div class="skills-card-img">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <path fill="none" d="M0 0h128v128H0z" />
                 <path
@@ -196,10 +202,10 @@ function App() {
                 />
               </svg>{" "}
             </div>
-            <div>Redux</div>
+            <div class="skills-card-name">Redux</div>
           </div>
           <div className="skillsbox">
-            <div>
+            <div  class="skills-card-img">
               {" "}
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z" />
@@ -209,10 +215,10 @@ function App() {
                 />
               </svg>{" "}
             </div>
-            <div>Javascript</div>
+            <div class="skills-card-name">Javascript</div>
           </div>
           <div className="skillsbox">
-            <div>
+            <div  class="skills-card-img">
               {" "}
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <path
@@ -241,11 +247,11 @@ function App() {
                 />
               </svg>
             </div>
-            <div>Css 3</div>
+            <div class="skills-card-name">Css 3</div>
           </div>
 
           <div className="skillsbox">
-            <div>
+            <div class="skills-card-img">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <path
                   fill="#E44D26"
@@ -265,16 +271,16 @@ function App() {
                 />
               </svg>
             </div>
-            <div>HTML5</div>
+            <div class="skills-card-name">HTML5</div>
           </div>
           <div className="skillsbox">
-            <div>
+            <div class="skills-card-img">
               <Img src="./Typescript.png" alt="Typescript" />
             </div>
-            <div>Typescript</div>
+            <div class="skills-card-name">Typescript</div>
           </div>
           <div className="skillsbox">
-            <div>
+            <div  class="skills-card-img">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <path
                   fill="#cb3837"
@@ -282,7 +288,7 @@ function App() {
                 />
               </svg>
             </div>
-            <div>npm</div>
+            <div class="skills-card-name">npm</div>
           </div>
           <div className="skillsbox">
             <div>
@@ -291,7 +297,7 @@ function App() {
             <div>Chakra UI</div>
           </div>
           <div className="skillsbox">
-            <div>
+            <div class="skills-card-img">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <path
                   fill="#F34F29"
@@ -299,7 +305,7 @@ function App() {
                 />
               </svg>
             </div>
-            <div>Git</div>
+            <div class="skills-card-name">Git</div>
           </div>
         </div>
       </div>
@@ -308,7 +314,7 @@ function App() {
           <h1>Projects </h1>
         </div>
         <div className="showbox">
-          <div className="projectbox">
+          <div className="projectbox project-card">
             <div>
               <Img
                 src="./myntraclone.jpeg"
@@ -319,7 +325,7 @@ function App() {
 
             <div>
               <center>
-                <h1 style={{ fontSize: "30px", lineHeight: "25px" }}>
+                <h1 style={{ fontSize: "30px", lineHeight: "25px" }} class="project-title">
                   Myntra Clone
                 </h1>
               </center>
@@ -329,12 +335,13 @@ function App() {
                   lineHeight: "25px",
                   marginTop: "10px",
                 }}
+                class="project-description"
               >
                 Myntra is a famous branded cloths Ecommerce website which gives
                 you wide varieties of fashionable and branded clothes and many
                 more.Here you can shop any items very easily.
               </h2>
-              <span style={{ marginTop: "5px" }}>
+              <span style={{ marginTop: "5px" }} class="project-tech-stack">
                 <button class="button-21">React</button>
                 <button class="button-21">Javascript</button>
                 <button class="button-21">Json Server</button>
@@ -342,7 +349,7 @@ function App() {
                 <button class="button-21">Render</button>
                 <button class="button-21">Chakra UI</button>
               </span>
-              <span className="github">
+              <span className="github project-github-link" >
                 <a
                   href="https://github.com/sushantshekhar82/Myntra.com"
                   target="_blank"
@@ -374,7 +381,8 @@ function App() {
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="feather feather-eye"
+                    class="feather feather-eye project-deployed-link "
+                   
                   >
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                     <circle cx="12" cy="12" r="3"></circle>
@@ -383,7 +391,7 @@ function App() {
               </span>
             </div>
           </div>
-          <div className="projectbox">
+          <div className="projectbox project-card">
             <div>
               <Img
                 src="./bluemercury.jpeg"
@@ -394,7 +402,7 @@ function App() {
 
             <div>
               <center>
-                <h1 style={{ fontSize: "30px", lineHeight: "25px" }}>
+                <h1 style={{ fontSize: "30px", lineHeight: "25px" }} class="project-title">
                   Bluemercury Clone
                 </h1>
               </center>
@@ -404,12 +412,13 @@ function App() {
                   lineHeight: "30px",
                   marginTop: "10px",
                 }}
+                class="project-description"
               >
                 Bluemercury is a skincare product Ecommerce website which gives
                 you wide varieties of branded skincare , makeup care and many
                 more products.
               </h2>
-              <span style={{ marginTop: "5px" }}>
+              <span style={{ marginTop: "5px" }} class="project-tech-stack">
                 <button class="button-21">Javascript</button>
                 <button class="button-21">Json Server</button>
                 <button class="button-21">API</button>
@@ -417,7 +426,7 @@ function App() {
                 <button class="button-21">HTML5</button>
                 <button class="button-21">Render</button>
               </span>
-              <span className="github">
+              <span className="github project-github-link">
                 <a
                   href="https://github.com/sushantshekhar82/Bluemercury.com"
                   rel="noreferrer"
@@ -449,7 +458,7 @@ function App() {
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="feather feather-eye"
+                    class="feather feather-eye project-deployed-link "
                   >
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                     <circle cx="12" cy="12" r="3"></circle>
@@ -458,7 +467,7 @@ function App() {
               </span>
             </div>
           </div>
-          <div className="projectbox">
+          <div className="projectbox project-card">
             <div>
               <Img
                 src="./wrike.png"
@@ -471,7 +480,7 @@ function App() {
 
             <div>
               <center>
-                <h1 style={{ fontSize: "30px", lineHeight: "25px" }}>
+                <h1 style={{ fontSize: "30px", lineHeight: "25px" }} class="project-title">
                   Wrike.com
                 </h1>
               </center>
@@ -481,13 +490,14 @@ function App() {
                   lineHeight: "25px",
                   marginTop: "10px",
                 }}
+                class="project-description"
               >
                 Wrike is the most powerful work management software at your
                 fingertips. It provides multiple features to manage your work
                 and complete in fixed time span by using this web based
                 software.
               </h2>
-              <span style={{ marginTop: "5px" }}>
+              <span style={{ marginTop: "5px" }} class="project-tech-stack">
                 <button class="button-21">React</button>
                 <button class="button-21">Javascript</button>
                 <button class="button-21">Json Server</button>
@@ -495,7 +505,7 @@ function App() {
                 <button class="button-21">Render</button>
                 <button class="button-21">Chakra UI</button>
               </span>
-              <span className="github">
+              <span className="github project-github-link">
                 <a
                   href="https://github.com/sushantshekhar82/Wrike.com"
                   target="_blank"
@@ -527,7 +537,7 @@ function App() {
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="feather feather-eye"
+                    class="feather feather-eye project-deployed-link "
                   >
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                     <circle cx="12" cy="12" r="3"></circle>
@@ -536,7 +546,7 @@ function App() {
               </span>
             </div>
           </div>
-          <div className="projectbox">
+          <div className="projectbox project-card">
             <div>
               <Img
                 src="./jefit.png"
@@ -549,7 +559,7 @@ function App() {
 
             <div>
               <center>
-                <h1 style={{ fontSize: "30px", lineHeight: "25px" }}>
+                <h1 style={{ fontSize: "30px", lineHeight: "25px" }} class="project-title">
                   Jefit.com
                 </h1>
               </center>
@@ -559,17 +569,18 @@ function App() {
                   lineHeight: "25px",
                   marginTop: "10px",
                 }}
+                class="project-description"
               >
                 Jefit is an American fitness gym website. This website provides
                 you all the exercise tips and direct connect to the coach for
                 better mentor.
               </h2>
-              <span style={{ marginTop: "5px" }}>
+              <span style={{ marginTop: "5px" }} class="project-tech-stack">
                 <button class="button-21">Javacript</button>
                 <button class="button-21">HTML5</button>
                 <button class="button-21">CSS3</button>
               </span>
-              <span className="github">
+              <span className="github project-github-link">
                 <a
                   href="https://github.com/sushantshekhar82/Jefit.com"
                   target="_blank"
@@ -601,7 +612,7 @@ function App() {
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="feather feather-eye"
+                    class="feather feather-eye project-deployed-link "
                   >
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                     <circle cx="12" cy="12" r="3"></circle>
@@ -621,6 +632,7 @@ function App() {
             width="100%"
             height="500px"
             style={{ margin: "5px" }}
+            class="react-activity-calendar" 
           />
         </center>
         <center>
@@ -638,12 +650,14 @@ function App() {
               align="center"
               src="https://github-readme-stats.vercel.app/api?username=sushantshekhar82&show_icons=true"
               alt="sushantshekhar82"
+              id="github-stats-card"
             />
             <Img
               className="stats"
               align="center"
               src="https://github-readme-streak-stats.herokuapp.com/?user=sushantshekhar82&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40"
               alt="sushantshekhar82"
+              id="github-streak-stats"
             />
           </div>
         </center>
@@ -652,6 +666,7 @@ function App() {
             className="stats"
             src="https://github-readme-stats.vercel.app/api/top-langs?username=sushantshekhar82&show_icons=true&locale=en&layout=compact&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40"
             alt="sushantshekhar82"
+            id="github-top-langs"
           />
         </center>
       </div>
@@ -659,8 +674,43 @@ function App() {
         style={{ fontSize: "35px", color: "#0A7AD6", fontWeight: "bold" }}
       >
         HAVE A PROJECT? OR JUST LOOKING TO HIRE?
+        <span style={{display:"flex", justifyContent:"center" ,gap:10}}>
+        <a
+                  href="https://github.com/sushantshekhar82"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="50"
+                    height="50"
+                    fill="Black"
+                    viewBox="0 0 24 24"
+                    id="contact-github"
+                  >
+                    <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z" />
+                  </svg>
+                </a>
+              
+           
+                <a
+                  href="https://www.linkedin.com/in/sushantshekhar8/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="50"
+                    height="5 0"
+                    fill="Black"
+                    viewBox="0 0 24 24"
+                    id="contact-linkedin"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a> </span>
       </center>
-      <div id="contactme" className="contact">
+      <div id="contact" className="contact1">
         <div className="hideform">
           <Img
             src="https://avighnaclasses.com/wp-content/uploads/2022/12/81732-contact-us.gif"
@@ -722,15 +772,15 @@ function App() {
       <span className="contactdetail">
       <a href="tel:8298937625">
         <div className="contactbox">
-          <button class="button-22">
-            {" "}
+          <button class="button-22" id="contact-phone" >
+           <FiPhoneCall style={{borderRadius:"5px",margin:"auto" }} size={"20px"}/>
             <Text
-              bgGradient="linear(to-l,skyblue, green)"
+              bgGradient="linear(to-l,white, white)"
               bgClip="text"
               fontSize="2xl"
               fontWeight="extrabold"
             >
-              Contact me @ +918298937625{" "}
+             +918298937625{" "}
             </Text>
           </button>
         </div>
@@ -738,15 +788,15 @@ function App() {
         <a href="mailto:sushant.shekhar151997@gmail.com" target="_blank" rel="noreferrer">
         <div className="contactbox">
           
-            <button class="button-22">
-          
+            <button class="button-22"  id="contact-email">
+          <MdEmail style={{borderRadius:"5px",margin:"auto" }} size={"20px"}/>
               <Text
-                bgGradient="linear(to-l,#D95D39, #F0A202)"
+                bgGradient="linear(to-l,white, white)"
                 bgClip="text"
                 fontSize="1xl"
                 fontWeight="extrabold"
               >
-                Email me @ 
+                
                 sushant.shekhar151997@gmail.com
               </Text>
             </button>
@@ -761,22 +811,25 @@ function App() {
         <div className="contactbox">
          
             <button class="button-22">
-              {" "}
+            < IoLogoWhatsapp style={{borderRadius:"5px",margin:"auto" }} size={"20px"}/>
+               
               <Text
-                bgGradient="linear(to-l,green, yellow)"
+                bgGradient="linear(to-l,white, white)"
                 bgClip="text"
                 fontSize="2xl"
                 fontWeight="extrabold"
               >
-                WhatApp Me{" "}
+                 WhatApp Me 
               </Text>
             </button>
           
         </div>
-        </a>  
+        </a> 
+       
       </span>
+      
       <div>
-        <div className="bottom"></div>
+        <div className="bottom">Designed and Developed by Sushant Shekhar,All rights reserved.</div>
       </div>
     </div>
   );

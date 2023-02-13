@@ -113,7 +113,7 @@ html{
   padding-bottom: 5px;
 }
 
-.about{
+.about1{
   display: grid;
  grid-template-columns: 100%;
  grid-template-rows: 100px auto;
@@ -125,7 +125,7 @@ html{
 height: auto;
 width: 100%;
 }
-.about>div>h1{
+.about1>div>h1{
   font-size: 37px;
   text-align: center;
 }
@@ -265,10 +265,10 @@ padding: 10px;
   width: 100%;
   padding: 10px;
 }
-.contact>h1{
+.contact1>h1{
   font-size: 30px;
 }
-.contact{
+.contact1{
   display: grid;
   grid-template-columns: 47% 47%;
   justify-content: space-around;
@@ -294,6 +294,7 @@ padding: 10px;
   
   font-family: CircularStd,sans-serif;
  margin-top: 5px;
+ margin-left: 5px;
  
   padding: 6px 20px;
 
@@ -354,6 +355,15 @@ align-items: center;
 display: flex;
 justify-content: center;
 align-items: center;
+}
+.bottom{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background-color:#000000;
+  color: wheat;
 }
 /* .contactbox{
 
@@ -694,7 +704,7 @@ font-weight: bold;
         display:none;
 
       }
-      .contact{
+      .contact1{
         margin: auto;
         width: 90%;
       }
@@ -749,6 +759,11 @@ font-weight: bold;
         display: flex;
         justify-content: center;
         align-items: center;
+        }
+        .bottom{
+          margin-top: 5px;
+          height: 30px;
+          font-size: 8px;
         }
        
 }
