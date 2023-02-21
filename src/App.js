@@ -152,12 +152,12 @@ function App() {
             <img src="./profile.png" alt="sushant shekhar" class="home-img" />
           </div>
           <div>
-            {" "}
+          
             <h2 className="name1">
             Innovative, solution-driven web developer with proficiency in MERN 
-            and capable of writing production-ready code using HTML, CSS, and Javascript.
+            and capable of writing production-ready code using HTML, CSS, and JavaScript.
              Proven experience in developing multiple web-based applications with a good 
-             knowledge of collaboration and can easily be adept with the work environment.
+            collaboration skills and can easily be adept with the work environment.
              
             </h2>
           </div>

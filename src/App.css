@@ -104,12 +104,12 @@ html{
 }
 .name1{
   color: rgb(246, 252, 247);
-  text-shadow: 1px 1px 2px black, 0 0 10px rgb(0, 162, 255), 0 0 5px rgb(49, 245, 10);
+  /* text-shadow: 1px 1px 2px black, 0 0 10px rgb(0, 162, 255), 0 0 5px rgb(49, 245, 10); */
   width: 100%;
   height: auto;
   margin: auto;
   font-size: 25px;
-  padding: 2px;
+  padding: 5px;
   padding-bottom: 5px;
 }
 
