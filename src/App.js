@@ -6,9 +6,9 @@ import { useToast } from "@chakra-ui/react";
 import { IoLogoWhatsapp} from "react-icons/io";
 import { MdEmail} from "react-icons/md"
 import { FiPhoneCall} from "react-icons/fi"
-
-import { useTypewriter, Cursor, Typewriter } from "react-simple-typewriter";
-
+import {FaCloudDownloadAlt} from "react-icons/fa"
+import {  Typewriter } from "react-simple-typewriter";
+import sushant from "./Sushant_Shekhar_Resume.pdf"
 function App() {
   const toast = useToast();
   const [click, setClick] = useState(true);
@@ -16,9 +16,18 @@ function App() {
   const [email, setEmail] = useState("");
   const [messsage, setMessage] = useState("");
 
+  function downloadFile() {
+    let link = document.createElement("a");
+    link.download = "Sushant_Shekhar_Resume.pdf";
+    link.href = sushant;
+    link.click();
+    link.remove();
+  }
   return (
     <div className="App">
-      <div className="Nav_Container " id="nav-menu">
+      {/* Navbar  */}
+     
+      <div className="Nav_Container ">
         <div className="wrapper">
           <img
             src="https://avatars.githubusercontent.com/u/105901300?v=4"
@@ -50,19 +59,16 @@ function App() {
             </li>
             <li>
               {" "}
-              <a
-                href="https://drive.google.com/file/d/1xMMFWpietjNymM1NeB3wafLPa4iBI9q3/view"
-                download="./Sushant_Shekhar_Resume.pdf"
-              >
-                <Button
-                  backgroundColor={"green.400"}
-                  style={{ display: "inline-block", zIndex: "1" }}
-                  zIndex={0}
-                  class="nav-link resume "  id="resume-button-1"
-                >
-                  Resume
-                </Button>
-              </a>
+              <button class="button-21" style={{display:"flex",gap:5}} id="resume-button-1"  onClick={() => {
+                    window.location.href =
+                      "https://drive.google.com/file/d/1xMMFWpietjNymM1NeB3wafLPa4iBI9q3/view";
+                    downloadFile();
+                  }}>
+              
+                  Resume <FaCloudDownloadAlt color="black"  size={25}/>
+                  </button>
+              
+              
             </li>
             <span
               style={{
@@ -116,6 +122,8 @@ function App() {
           ></i>
         </div>
       </div>
+     
+          {/* Home */}
       <div id="home" className="intro">
         <div>
           <h4>Hi there 👋🏽, i'm</h4>
@@ -140,9 +148,17 @@ function App() {
               />
             </span>
           </h2>
+          <button class="button-21" style={{display:"flex",gap:5,height:"50px"}} id="resume-button-1"  onClick={() => {
+                    window.location.href =
+                      "https://drive.google.com/file/d/1xMMFWpietjNymM1NeB3wafLPa4iBI9q3/view";
+                    downloadFile();
+                  }}>
+              
+                  Resume <FaCloudDownloadAlt color="black"  size={25}/>
+                  </button>
         </div>
       </div>
-
+             {/* About */}
       <div id="about" className="about1 about section">
         <div>
           <h1 style={{ marginTop: "5px" }}>About me</h1>
@@ -163,6 +179,7 @@ function App() {
           </div>
         </div>
       </div>
+            {/* Skills */}
       <div id="skills" className="skill">
         <div>
           {" "}
@@ -309,6 +326,7 @@ function App() {
           </div>
         </div>
       </div>
+             {/* Projects */}
       <div id="projects" className="project">
         <div>
           <h1>Projects </h1>
@@ -623,6 +641,7 @@ function App() {
           </div>
         </div>
       </div>
+       {/* calender */}
       <div id="calender" className="calender">
         <center>Calender</center>
         <center>
@@ -710,6 +729,7 @@ function App() {
                   </svg>
                 </a> </span>
       </center>
+       {/* contact */}
       <div id="contact" className="contact1">
         <div className="hideform">
           <Img
