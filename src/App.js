@@ -28,6 +28,7 @@ function App() {
       {/* Navbar  */}
      
       <div className="Nav_Container ">
+      <div id="nav-menu">
         <div className="wrapper">
           <img
             src="https://avatars.githubusercontent.com/u/105901300?v=4"
@@ -36,6 +37,7 @@ function App() {
             width="50px"
             height="50px"
           />
+        </div>
         </div>
         <div>s
           <ul
