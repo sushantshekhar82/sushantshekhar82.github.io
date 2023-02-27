@@ -1,8 +1,8 @@
-import { Box, Button, Flex, Img, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Img, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Tab, TabList, TabPanel, TabPanels, Tabs, Text, useDisclosure } from "@chakra-ui/react";
 import { useState } from "react";
 import "./App.css";
 import { useToast } from "@chakra-ui/react";
-
+import React from 'react'
 import { IoLogoWhatsapp} from "react-icons/io";
 import { MdEmail} from "react-icons/md"
 import { FiPhoneCall} from "react-icons/fi"
@@ -23,6 +23,27 @@ function App() {
     link.click();
     link.remove();
   }
+  
+  
+    const OverlayOne = () => (
+      <ModalOverlay
+        bg='blackAlpha.300'
+        backdropFilter='blur(10px) hue-rotate(90deg)'
+      />
+    )
+  
+    const OverlayTwo = () => (
+      <ModalOverlay
+        bg='none'
+        backdropFilter='auto'
+        backdropInvert='80%'
+        backdropBlur='2px'
+      />
+    )
+  
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const [overlay, setOverlay] = React.useState(<OverlayOne />)
+  
   return (
     <div className="App">
       {/* Navbar  */}
@@ -760,9 +781,30 @@ function App() {
                 src="./myntraclone.jpeg"
                 alt="myntraclone"
                 borderRadius={"10px"}
+                onClick={() => {
+                  setOverlay(<OverlayOne />)
+                  onOpen()
+                }}
               />
             </div>
-
+            <Modal isCentered isOpen={isOpen} onClose={onClose}>
+        {overlay}
+        <ModalContent>
+          <ModalHeader>Myntra Clone</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+          <Img
+                src="./myntraclone.jpeg"
+                alt="myntraclone"
+                borderRadius={"10px"}
+              
+              />
+          </ModalBody>
+          <ModalFooter>
+            <Button onClick={onClose}>Close</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
             <div>
               <center>
                 <h1 style={{ fontSize: "30px", lineHeight: "25px" }} class="project-title">
@@ -1074,8 +1116,10 @@ function App() {
             height="500px"
             style={{ margin: "5px" }}
             class="react-activity-calendar" 
+          
           />
         </center>
+       
         <center style={{marginTop:"5px" , marginBottom:"10px"}}><a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=sushantshekhar82" alt="sushantshekhar82"  width="90%" /></a></center>
       
         <center>
