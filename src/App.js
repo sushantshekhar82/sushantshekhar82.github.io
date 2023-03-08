@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Img, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Tab, TabList, TabPanel, TabPanels, Tabs, Text, useDisclosure } from "@chakra-ui/react";
+import { Box, Button, Flex, Img, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Spinner, Tab, TabList, TabPanel, TabPanels, Tabs, Text, useDisclosure } from "@chakra-ui/react";
 import { useState } from "react";
 import "./App.css";
 import { useToast } from "@chakra-ui/react";
@@ -9,13 +9,20 @@ import { FiPhoneCall} from "react-icons/fi"
 import {FaCloudDownloadAlt} from "react-icons/fa"
 import {  Typewriter } from "react-simple-typewriter";
 import sushant from "./Sushant_Shekhar_Resume.pdf"
+import { createGlobalStyle } from 'styled-components';
+import AOS from 'aos'
+import 'aos/dist/aos.css';
 function App() {
+  AOS.init({
+    offset:100, 
+    duration: 1000,
+  });
   const toast = useToast();
   const [click, setClick] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [messsage, setMessage] = useState("");
-
+  const [loader,setLoader]=useState(true)
   function downloadFile() {
     let link = document.createElement("a");
     link.download = "Sushant_Shekhar_Resume.pdf";
@@ -23,7 +30,7 @@ function App() {
     link.click();
     link.remove();
   }
-  
+
   
     const OverlayOne = () => (
       <ModalOverlay
@@ -43,7 +50,12 @@ function App() {
   
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [overlay, setOverlay] = React.useState(<OverlayOne />)
-  
+    const GlobalStyles = createGlobalStyle`
+    style {
+      --i: 0;
+     
+    }
+  `;
   return (
     <div className="App">
       {/* Navbar  */}
@@ -60,7 +72,7 @@ function App() {
           />
         </div>
         
-        <div>s
+        <div>
           <ul
             id="navitems"
             className={click ? "#navitems" : "#navitems active"}
@@ -145,9 +157,9 @@ function App() {
           ></i>
         </div>
       </div>
+   
      
-          {/* Home */}
-      <div id="home" className="intro">
+      <div id="home" className="intro" >
         <div>
           <h4>Hi there 👋🏽, i'm</h4>
           <h1 className="name"  id="user-detail-name">Kumar Sushant Shekhar</h1>
@@ -181,47 +193,73 @@ function App() {
                   </button>
         </div>
       </div>
-             {/* About */}
-      <div id="about" className="about1 about section">
+           
+      <div id="about" className="about1 about section" data-aos="fade-up">
         <div>
           <h1 style={{ marginTop: "5px" }}>About me</h1>
         </div>
         <div className="aboutgrid">
           <div>
-            <img src="./profile.png" alt="sushant shekhar" class="home-img" />
+          {/* <Animationbtn/> */}
+        
+          <img src="./profileimg2.png" alt="sushant shekhar" class="home-img" />
+          
+          {/* <div className="cube">
+            <div>
+              
+              <span><img src="./profile.png" alt="sushant shekhar" class="home-img" /></span>
+              <span  style={{'--i',1}}><img src="./profile.png" alt="sushant shekhar" class="home-img" /></span>
+              <span  style={{'--i',2}}><img src="./profile.png" alt="sushant shekhar" class="home-img" /></span>
+              <span  style={{'--i',3}}><img src="./profile.png" alt="sushant shekhar" class="home-img" /></span>
+           
+              <span style={`${--i}:${1}`}></span>
+              <span style={`${--i}:${2}`}></span>
+              <span style={`${--i}:${3}`}></span>
+            </div>
+          </div> */}
+          
+          {/* <div id="div5">
+    Lorem i 
+  </div>  */}
           </div>
           <div>
-          
-            <h2 className="name1">
-            Innovative, solution-driven web developer with proficiency in MERN 
-            and capable of writing production-ready code using HTML, CSS, and JavaScript.
-             Proven experience in developing multiple web-based applications with a good 
-            collaboration skills and can easily be adept with the work environment.
-             
-            </h2>
+          <div className="box">
+            <h2>Innovative, solution-driven web developer with proficiency
+in MERN stack and capable of writing production-ready
+code using HTML, CSS, and JavaScript. Proven experience in
+developing multiple web-based applications with good
+collaboration skills and can easily be adept in the work
+environment.
+             </h2>
+           </div> 
           </div>
         </div>
+    
       </div>
-            {/* Skills */}
-      <div id="skills" className="skill">
+      {/* <span className='blur'>
+       <div className="outerbtn">
+      <button class="button-20">Hello</button>
+     </div>
+     </span>   */}
+      <div id="skills" className="skill" data-aos="flip-left">
         <div>
           {" "}
           <h1 style={{ marginTop: "5px" }}>Skills</h1>
         </div>
         <Flex justifyContent={'center'} alignItems={'center'}>
         <Tabs variant='soft-rounded' colorScheme='green' fontWeight={'bold'}>
-  <TabList>
+  <TabList fontSize={{base:"14px",md:"18px",lg:"20px"}}>
   <Tab fontWeight={'bold'}>All Skills</Tab>
-    <Tab fontWeight={'bold'}>FrontEnd</Tab>
+    {/* <Tab fontWeight={'bold'}>FrontEnd</Tab>
     <Tab fontWeight={'bold'}>BackEnd</Tab>
-    <Tab fontWeight={'bold'}>Tools</Tab>
+    <Tab fontWeight={'bold'}>Tools</Tab> */}
   </TabList>
   <TabPanels>
-  
+                                 {/* All skills section */}
     <TabPanel>
     <Box display={'grid'} gridTemplateColumns={{base:"repeat(2,1fr)",md:"repeat(3,1fr)",lg:"repeat(5,1fr)"} } gap="10px" >
         
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-up">
           <div class="skills-card-img">
             {" "}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
@@ -233,7 +271,19 @@ function App() {
           </div>
           <div class="skills-card-name">React</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox"  data-aos="fade-up">
+          <div>
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill-rule="evenodd" clip-rule="evenodd" fill="#439934" d="M88.038 42.812c1.605 4.643 2.761 9.383 3.141 14.296.472 6.095.256 12.147-1.029 18.142-.035.165-.109.32-.164.48-.403.001-.814-.049-1.208.012-3.329.523-6.655 1.065-9.981 1.604-3.438.557-6.881 1.092-10.313 1.687-1.216.21-2.721-.041-3.212 1.641-.014.046-.154.054-.235.08l.166-10.051-.169-24.252 1.602-.275c2.62-.429 5.24-.864 7.862-1.281 3.129-.497 6.261-.98 9.392-1.465 1.381-.215 2.764-.412 4.148-.618z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#45A538" d="M61.729 110.054c-1.69-1.453-3.439-2.842-5.059-4.37-8.717-8.222-15.093-17.899-18.233-29.566-.865-3.211-1.442-6.474-1.627-9.792-.13-2.322-.318-4.665-.154-6.975.437-6.144 1.325-12.229 3.127-18.147l.099-.138c.175.233.427.439.516.702 1.759 5.18 3.505 10.364 5.242 15.551 5.458 16.3 10.909 32.604 16.376 48.9.107.318.384.579.583.866l-.87 2.969z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#46A037" d="M88.038 42.812c-1.384.206-2.768.403-4.149.616-3.131.485-6.263.968-9.392 1.465-2.622.417-5.242.852-7.862 1.281l-1.602.275-.012-1.045c-.053-.859-.144-1.717-.154-2.576-.069-5.478-.112-10.956-.18-16.434-.042-3.429-.105-6.857-.175-10.285-.043-2.13-.089-4.261-.185-6.388-.052-1.143-.236-2.28-.311-3.423-.042-.657.016-1.319.029-1.979.817 1.583 1.616 3.178 2.456 4.749 1.327 2.484 3.441 4.314 5.344 6.311 7.523 7.892 12.864 17.068 16.193 27.433z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#409433" d="M65.036 80.753c.081-.026.222-.034.235-.08.491-1.682 1.996-1.431 3.212-1.641 3.432-.594 6.875-1.13 10.313-1.687 3.326-.539 6.652-1.081 9.981-1.604.394-.062.805-.011 1.208-.012-.622 2.22-1.112 4.488-1.901 6.647-.896 2.449-1.98 4.839-3.131 7.182a49.142 49.142 0 01-6.353 9.763c-1.919 2.308-4.058 4.441-6.202 6.548-1.185 1.165-2.582 2.114-3.882 3.161l-.337-.23-1.214-1.038-1.256-2.753a41.402 41.402 0 01-1.394-9.838l.023-.561.171-2.426c.057-.828.133-1.655.168-2.485.129-2.982.241-5.964.359-8.946z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#4FAA41" d="M65.036 80.753c-.118 2.982-.23 5.964-.357 8.947-.035.83-.111 1.657-.168 2.485l-.765.289c-1.699-5.002-3.399-9.951-5.062-14.913-2.75-8.209-5.467-16.431-8.213-24.642a4498.887 4498.887 0 00-6.7-19.867c-.105-.31-.407-.552-.617-.826l4.896-9.002c.168.292.39.565.496.879a6167.476 6167.476 0 016.768 20.118c2.916 8.73 5.814 17.467 8.728 26.198.116.349.308.671.491 1.062l.67-.78-.167 10.052z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#4AA73C" d="M43.155 32.227c.21.274.511.516.617.826a4498.887 4498.887 0 016.7 19.867c2.746 8.211 5.463 16.433 8.213 24.642 1.662 4.961 3.362 9.911 5.062 14.913l.765-.289-.171 2.426-.155.559c-.266 2.656-.49 5.318-.814 7.968-.163 1.328-.509 2.632-.772 3.947-.198-.287-.476-.548-.583-.866-5.467-16.297-10.918-32.6-16.376-48.9a3888.972 3888.972 0 00-5.242-15.551c-.089-.263-.34-.469-.516-.702l3.272-8.84z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#57AE47" d="M65.202 70.702l-.67.78c-.183-.391-.375-.714-.491-1.062-2.913-8.731-5.812-17.468-8.728-26.198a6167.476 6167.476 0 00-6.768-20.118c-.105-.314-.327-.588-.496-.879l6.055-7.965c.191.255.463.482.562.769 1.681 4.921 3.347 9.848 5.003 14.778 1.547 4.604 3.071 9.215 4.636 13.813.105.308.47.526.714.786l.012 1.045c.058 8.082.115 16.167.171 24.251z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#60B24F" d="M65.021 45.404c-.244-.26-.609-.478-.714-.786-1.565-4.598-3.089-9.209-4.636-13.813-1.656-4.93-3.322-9.856-5.003-14.778-.099-.287-.371-.514-.562-.769 1.969-1.928 3.877-3.925 5.925-5.764 1.821-1.634 3.285-3.386 3.352-5.968.003-.107.059-.214.145-.514l.519 1.306c-.013.661-.072 1.322-.029 1.979.075 1.143.259 2.28.311 3.423.096 2.127.142 4.258.185 6.388.069 3.428.132 6.856.175 10.285.067 5.478.111 10.956.18 16.434.008.861.098 1.718.152 2.577z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#A9AA88" d="M62.598 107.085c.263-1.315.609-2.62.772-3.947.325-2.649.548-5.312.814-7.968l.066-.01.066.011a41.402 41.402 0 001.394 9.838c-.176.232-.425.439-.518.701-.727 2.05-1.412 4.116-2.143 6.166-.1.28-.378.498-.574.744l-.747-2.566.87-2.969z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#B6B598" d="M62.476 112.621c.196-.246.475-.464.574-.744.731-2.05 1.417-4.115 2.143-6.166.093-.262.341-.469.518-.701l1.255 2.754c-.248.352-.59.669-.728 1.061l-2.404 7.059c-.099.283-.437.483-.663.722l-.695-3.985z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C1A7" d="M63.171 116.605c.227-.238.564-.439.663-.722l2.404-7.059c.137-.391.48-.709.728-1.061l1.215 1.037c-.587.58-.913 1.25-.717 2.097l-.369 1.208c-.168.207-.411.387-.494.624-.839 2.403-1.64 4.819-2.485 7.222-.107.305-.404.544-.614.812-.109-1.387-.22-2.771-.331-4.158z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#CECDB7" d="M63.503 120.763c.209-.269.506-.508.614-.812.845-2.402 1.646-4.818 2.485-7.222.083-.236.325-.417.494-.624l-.509 5.545c-.136.157-.333.294-.398.477-.575 1.614-1.117 3.24-1.694 4.854-.119.333-.347.627-.525.938-.158-.207-.441-.407-.454-.623-.051-.841-.016-1.688-.013-2.533z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#DBDAC7" d="M63.969 123.919c.178-.312.406-.606.525-.938.578-1.613 1.119-3.239 1.694-4.854.065-.183.263-.319.398-.477l.012 3.64-1.218 3.124-1.411-.495z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#EBE9DC" d="M65.38 124.415l1.218-3.124.251 3.696-1.469-.572z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#CECDB7" d="M67.464 110.898c-.196-.847.129-1.518.717-2.097l.337.23-1.054 1.867z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#4FAA41" d="M64.316 95.172l-.066-.011-.066.01.155-.559-.023.56z"/></svg>
+          </div>
+          <div>MongoDb</div>
+        </div>
+        <div className="skillsbox"  data-aos="fade-up">
+          <div>
+          <Img src="https://iconape.com/wp-content/files/cf/353046/svg/next-js-seeklogo.com.svg" p={'3px'}  alt='jest'/>
+           </div>
+          <div>NextJs</div>
+        </div>
+        <div className="skillsbox" data-aos="fade-up">
           <div class="skills-card-img">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
               <path
@@ -244,7 +294,7 @@ function App() {
           </div>
           <div class="skills-card-name">NodeJs</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-up">
           <div class="skills-card-img">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
               <path fill="none" d="M0 0h128v128H0z" />
@@ -256,7 +306,7 @@ function App() {
           </div>
           <div class="skills-card-name">Redux</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox"  data-aos="fade-up">
           <div  class="skills-card-img">
             {" "}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
@@ -269,7 +319,7 @@ function App() {
           </div>
           <div class="skills-card-name">JavaScript</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox"  data-aos="fade-up">
           <div  class="skills-card-img">
             {" "}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
@@ -302,7 +352,7 @@ function App() {
           <div class="skills-card-name">Css 3</div>
         </div>
 
-        <div className="skillsbox">
+        <div className="skillsbox"  data-aos="fade-up">
           <div class="skills-card-img">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
               <path
@@ -325,61 +375,51 @@ function App() {
           </div>
           <div class="skills-card-name">HTML5</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox"  data-aos="fade-up">
           <div class="skills-card-img">
             <Img src="./Typescript.png" alt="Typescript" />
           </div>
           <div class="skills-card-name">Typescript</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox"  data-aos="fade-up">
           <div>
           <svg fill="#000000"  viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M256,48,496,464H16Z"/></svg>
           </div>
           <div>Vercel</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox"  data-aos="fade-up">
           <div>
-          <svg  viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none"><title>file_type_vite</title><path d="M29.8836 6.146L16.7418 29.6457c-.2714.4851-.9684.488-1.2439.0052L2.0956 6.1482c-.3-.5262.1498-1.1635.746-1.057l13.156 2.3516a.7144.7144 0 00.2537-.0004l12.8808-2.3478c.5942-.1083 1.0463.5241.7515 1.0513z" fill="url(#paint0_linear)"/><path d="M22.2644 2.0069l-9.7253 1.9056a.3571.3571 0 00-.2879.3294l-.5982 10.1038c-.014.238.2045.4227.4367.3691l2.7077-.6248c.2534-.0585.4823.1647.4302.4194l-.8044 3.9393c-.0542.265.1947.4918.4536.4132l1.6724-.5082c.2593-.0787.5084.1487.4536.414l-1.2784 6.1877c-.08.387.4348.598.6495.2662L16.5173 25 24.442 9.1848c.1327-.2648-.096-.5667-.387-.5106l-2.787.5379c-.262.0505-.4848-.1934-.4109-.4497l1.8191-6.306c.074-.2568-.1496-.5009-.4118-.4495z" fill="url(#paint1_linear)"/><defs id="defs50"><linearGradient id="paint0_linear" x1="6.0002" y1="32.9999" x2="235" y2="344" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.07142 0 0 .07142 1.3398 1.8944)"><stop stop-color="#41D1FF" id="stop38"/><stop offset="1" stop-color="#BD34FE" id="stop40"/></linearGradient><linearGradient id="paint1_linear" x1="194.651" y1="8.8182" x2="236.076" y2="292.989" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.07142 0 0 .07142 1.3398 1.8944)"><stop stop-color="#FFEA83" id="stop43"/><stop offset=".0833" stop-color="#FFDD35" id="stop45"/><stop offset="1" stop-color="#FFA800" id="stop47"/></linearGradient></defs></svg>
-          </div>
+         <Img src="https://www.svgrepo.com/show/374167/vite.svg" alt="vite"/>
+           </div>
           <div>Vite</div>
         </div>
        
-        <div className="skillsbox">
+        <div className="skillsbox"  data-aos="fade-up">
           <div>
             <Img src="./chakra.png" alt="chakra" />
           </div>
           <div>Chakra UI</div>
         </div>
-        <div className="skillsbox">
-          <div>
-          <Img src="https://iconape.com/wp-content/files/cf/353046/svg/next-js-seeklogo.com.svg" p={'3px'}  alt='jest'/>
-           </div>
-          <div>NextJs</div>
-        </div>
-        <div className="skillsbox">
-          <div>
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill-rule="evenodd" clip-rule="evenodd" fill="#439934" d="M88.038 42.812c1.605 4.643 2.761 9.383 3.141 14.296.472 6.095.256 12.147-1.029 18.142-.035.165-.109.32-.164.48-.403.001-.814-.049-1.208.012-3.329.523-6.655 1.065-9.981 1.604-3.438.557-6.881 1.092-10.313 1.687-1.216.21-2.721-.041-3.212 1.641-.014.046-.154.054-.235.08l.166-10.051-.169-24.252 1.602-.275c2.62-.429 5.24-.864 7.862-1.281 3.129-.497 6.261-.98 9.392-1.465 1.381-.215 2.764-.412 4.148-.618z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#45A538" d="M61.729 110.054c-1.69-1.453-3.439-2.842-5.059-4.37-8.717-8.222-15.093-17.899-18.233-29.566-.865-3.211-1.442-6.474-1.627-9.792-.13-2.322-.318-4.665-.154-6.975.437-6.144 1.325-12.229 3.127-18.147l.099-.138c.175.233.427.439.516.702 1.759 5.18 3.505 10.364 5.242 15.551 5.458 16.3 10.909 32.604 16.376 48.9.107.318.384.579.583.866l-.87 2.969z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#46A037" d="M88.038 42.812c-1.384.206-2.768.403-4.149.616-3.131.485-6.263.968-9.392 1.465-2.622.417-5.242.852-7.862 1.281l-1.602.275-.012-1.045c-.053-.859-.144-1.717-.154-2.576-.069-5.478-.112-10.956-.18-16.434-.042-3.429-.105-6.857-.175-10.285-.043-2.13-.089-4.261-.185-6.388-.052-1.143-.236-2.28-.311-3.423-.042-.657.016-1.319.029-1.979.817 1.583 1.616 3.178 2.456 4.749 1.327 2.484 3.441 4.314 5.344 6.311 7.523 7.892 12.864 17.068 16.193 27.433z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#409433" d="M65.036 80.753c.081-.026.222-.034.235-.08.491-1.682 1.996-1.431 3.212-1.641 3.432-.594 6.875-1.13 10.313-1.687 3.326-.539 6.652-1.081 9.981-1.604.394-.062.805-.011 1.208-.012-.622 2.22-1.112 4.488-1.901 6.647-.896 2.449-1.98 4.839-3.131 7.182a49.142 49.142 0 01-6.353 9.763c-1.919 2.308-4.058 4.441-6.202 6.548-1.185 1.165-2.582 2.114-3.882 3.161l-.337-.23-1.214-1.038-1.256-2.753a41.402 41.402 0 01-1.394-9.838l.023-.561.171-2.426c.057-.828.133-1.655.168-2.485.129-2.982.241-5.964.359-8.946z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#4FAA41" d="M65.036 80.753c-.118 2.982-.23 5.964-.357 8.947-.035.83-.111 1.657-.168 2.485l-.765.289c-1.699-5.002-3.399-9.951-5.062-14.913-2.75-8.209-5.467-16.431-8.213-24.642a4498.887 4498.887 0 00-6.7-19.867c-.105-.31-.407-.552-.617-.826l4.896-9.002c.168.292.39.565.496.879a6167.476 6167.476 0 016.768 20.118c2.916 8.73 5.814 17.467 8.728 26.198.116.349.308.671.491 1.062l.67-.78-.167 10.052z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#4AA73C" d="M43.155 32.227c.21.274.511.516.617.826a4498.887 4498.887 0 016.7 19.867c2.746 8.211 5.463 16.433 8.213 24.642 1.662 4.961 3.362 9.911 5.062 14.913l.765-.289-.171 2.426-.155.559c-.266 2.656-.49 5.318-.814 7.968-.163 1.328-.509 2.632-.772 3.947-.198-.287-.476-.548-.583-.866-5.467-16.297-10.918-32.6-16.376-48.9a3888.972 3888.972 0 00-5.242-15.551c-.089-.263-.34-.469-.516-.702l3.272-8.84z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#57AE47" d="M65.202 70.702l-.67.78c-.183-.391-.375-.714-.491-1.062-2.913-8.731-5.812-17.468-8.728-26.198a6167.476 6167.476 0 00-6.768-20.118c-.105-.314-.327-.588-.496-.879l6.055-7.965c.191.255.463.482.562.769 1.681 4.921 3.347 9.848 5.003 14.778 1.547 4.604 3.071 9.215 4.636 13.813.105.308.47.526.714.786l.012 1.045c.058 8.082.115 16.167.171 24.251z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#60B24F" d="M65.021 45.404c-.244-.26-.609-.478-.714-.786-1.565-4.598-3.089-9.209-4.636-13.813-1.656-4.93-3.322-9.856-5.003-14.778-.099-.287-.371-.514-.562-.769 1.969-1.928 3.877-3.925 5.925-5.764 1.821-1.634 3.285-3.386 3.352-5.968.003-.107.059-.214.145-.514l.519 1.306c-.013.661-.072 1.322-.029 1.979.075 1.143.259 2.28.311 3.423.096 2.127.142 4.258.185 6.388.069 3.428.132 6.856.175 10.285.067 5.478.111 10.956.18 16.434.008.861.098 1.718.152 2.577z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#A9AA88" d="M62.598 107.085c.263-1.315.609-2.62.772-3.947.325-2.649.548-5.312.814-7.968l.066-.01.066.011a41.402 41.402 0 001.394 9.838c-.176.232-.425.439-.518.701-.727 2.05-1.412 4.116-2.143 6.166-.1.28-.378.498-.574.744l-.747-2.566.87-2.969z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#B6B598" d="M62.476 112.621c.196-.246.475-.464.574-.744.731-2.05 1.417-4.115 2.143-6.166.093-.262.341-.469.518-.701l1.255 2.754c-.248.352-.59.669-.728 1.061l-2.404 7.059c-.099.283-.437.483-.663.722l-.695-3.985z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C1A7" d="M63.171 116.605c.227-.238.564-.439.663-.722l2.404-7.059c.137-.391.48-.709.728-1.061l1.215 1.037c-.587.58-.913 1.25-.717 2.097l-.369 1.208c-.168.207-.411.387-.494.624-.839 2.403-1.64 4.819-2.485 7.222-.107.305-.404.544-.614.812-.109-1.387-.22-2.771-.331-4.158z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#CECDB7" d="M63.503 120.763c.209-.269.506-.508.614-.812.845-2.402 1.646-4.818 2.485-7.222.083-.236.325-.417.494-.624l-.509 5.545c-.136.157-.333.294-.398.477-.575 1.614-1.117 3.24-1.694 4.854-.119.333-.347.627-.525.938-.158-.207-.441-.407-.454-.623-.051-.841-.016-1.688-.013-2.533z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#DBDAC7" d="M63.969 123.919c.178-.312.406-.606.525-.938.578-1.613 1.119-3.239 1.694-4.854.065-.183.263-.319.398-.477l.012 3.64-1.218 3.124-1.411-.495z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#EBE9DC" d="M65.38 124.415l1.218-3.124.251 3.696-1.469-.572z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#CECDB7" d="M67.464 110.898c-.196-.847.129-1.518.717-2.097l.337.23-1.054 1.867z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#4FAA41" d="M64.316 95.172l-.066-.011-.066.01.155-.559-.023.56z"/></svg>
-          </div>
-          <div>MongoDb</div>
-        </div>
-        <div className="skillsbox">
+       
+      
+        <div className="skillsbox"  data-aos="fade-up">
           <div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path d="M126.67 98.44c-4.56 1.16-7.38.05-9.91-3.75-5.68-8.51-11.95-16.63-18-24.9-.78-1.07-1.59-2.12-2.6-3.45C89 76 81.85 85.2 75.14 94.77c-2.4 3.42-4.92 4.91-9.4 3.7l26.92-36.13L67.6 29.71c4.31-.84 7.29-.41 9.93 3.45 5.83 8.52 12.26 16.63 18.67 25.21 6.45-8.55 12.8-16.67 18.8-25.11 2.41-3.42 5-4.72 9.33-3.46-3.28 4.35-6.49 8.63-9.72 12.88-4.36 5.73-8.64 11.53-13.16 17.14-1.61 2-1.35 3.3.09 5.19C109.9 76 118.16 87.1 126.67 98.44zM1.33 61.74c.72-3.61 1.2-7.29 2.2-10.83 6-21.43 30.6-30.34 47.5-17.06C60.93 41.64 63.39 52.62 62.9 65H7.1c-.84 22.21 15.15 35.62 35.53 28.78 7.15-2.4 11.36-8 13.47-15 1.07-3.51 2.84-4.06 6.14-3.06-1.69 8.76-5.52 16.08-13.52 20.66-12 6.86-29.13 4.64-38.14-4.89C5.26 85.89 3 78.92 2 71.39c-.15-1.2-.46-2.38-.7-3.57q.03-3.04.03-6.08zm5.87-1.49h50.43c-.33-16.06-10.33-27.47-24-27.57-15-.12-25.78 11.02-26.43 27.57z"/></svg>   </div>
           <div>ExpressJs</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox"  data-aos="fade-up">
           <div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill="#83CD29" d="M112.771 30.334L68.674 4.729c-2.781-1.584-6.402-1.584-9.205 0L14.901 30.334C12.031 31.985 10 35.088 10 38.407v51.142c0 3.319 2.084 6.423 4.954 8.083l11.775 6.688c5.628 2.772 7.617 2.772 10.178 2.772 8.333 0 13.093-5.039 13.093-13.828v-50.49c0-.713-.371-1.774-1.071-1.774h-5.623C42.594 41 41 42.061 41 42.773v50.49c0 3.896-3.524 7.773-10.11 4.48L18.723 90.73c-.424-.23-.723-.693-.723-1.181V38.407c0-.482.555-.966.982-1.213l44.424-25.561c.415-.235 1.025-.235 1.439 0l43.882 25.555c.42.253.272.722.272 1.219v51.142c0 .488.183.963-.232 1.198l-44.086 25.576c-.378.227-.847.227-1.261 0l-11.307-6.749c-.341-.198-.746-.269-1.073-.086-3.146 1.783-3.726 2.02-6.677 3.043-.726.253-1.797.692.41 1.929l14.798 8.754a9.294 9.294 0 004.647 1.246c1.642 0 3.25-.426 4.667-1.246l43.885-25.582c2.87-1.672 4.23-4.764 4.23-8.083V38.407c0-3.319-1.36-6.414-4.229-8.073zM77.91 81.445c-11.726 0-14.309-3.235-15.17-9.066-.1-.628-.633-1.379-1.272-1.379h-5.731c-.709 0-1.279.86-1.279 1.566 0 7.466 4.059 16.512 23.453 16.512 14.039 0 22.088-5.455 22.088-15.109 0-9.572-6.467-12.084-20.082-13.886-13.762-1.819-15.16-2.738-15.16-5.962 0-2.658 1.184-6.203 11.374-6.203 9.105 0 12.461 1.954 13.842 8.091.118.577.645.991 1.24.991h5.754c.354 0 .692-.143.94-.396.24-.272.367-.613.335-.979-.891-10.568-7.912-15.493-22.112-15.493-12.631 0-20.166 5.334-20.166 14.275 0 9.698 7.497 12.378 19.622 13.577 14.505 1.422 15.633 3.542 15.633 6.395 0 4.955-3.978 7.066-13.309 7.066z"/></svg>
           </div>
           <div>NodeJs</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox"  data-aos="fade-up">
           <div>
             <Img src="./cypress.webp" alt="cypress"/>
           </div>
-          <div>Cyress</div>
+          <div>Cypress</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox"  data-aos="fade-up">
           <div  class="skills-card-img">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
               <path
@@ -391,7 +431,7 @@ function App() {
           <div class="skills-card-name">npm</div>
         </div>
       
-        <div className="skillsbox">
+        <div className="skillsbox"  data-aos="fade-up">
           <div class="skills-card-img">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
               <path
@@ -402,7 +442,7 @@ function App() {
           </div>
           <div class="skills-card-name">Git</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox"  data-aos="fade-up">
           <div class="skills-card-img" style={{padding:"3px"}}>
           <svg  viewBox="-11.9 -2 1003.9 995.6"  xmlns="http://www.w3.org/2000/svg"><path d="m12.1 353.9s-24-17.3 4.8-40.4l67.1-60s19.2-20.2 39.5-2.6l619.2 468.8v224.8s-.3 35.3-45.6 31.4z" fill="#2489ca"/><path d="m171.7 498.8-159.6 145.1s-16.4 12.2 0 34l74.1 67.4s17.6 18.9 43.6-2.6l169.2-128.3z" fill="#1070b3"/><path d="m451.9 500 292.7-223.5-1.9-223.6s-12.5-48.8-54.2-23.4l-389.5 354.5z" fill="#0877b9"/><path d="m697.1 976.2c17 17.4 37.6 11.7 37.6 11.7l228.1-112.4c29.2-19.9 25.1-44.6 25.1-44.6v-671.2c0-29.5-30.2-39.7-30.2-39.7l-197.7-95.3c-43.2-26.7-71.5 4.8-71.5 4.8s36.4-26.2 54.2 23.4v887.5c0 6.1-1.3 12.1-3.9 17.5-5.2 10.5-16.5 20.3-43.6 16.2z" fill="#3c99d4"/></svg>
           </div>
@@ -410,10 +450,11 @@ function App() {
         </div>
       </Box>
     </TabPanel>
-    <TabPanel>
+                                   {/* FrontEnd */}
+    {/* <TabPanel>
     <Box display={'grid'} gridTemplateColumns={{base:"repeat(2,1fr)",md:"repeat(3,1fr)",lg:"repeat(5,1fr)"} } gap="10px" >
         
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="flip-up">
           <div class="skills-card-img">
             {" "}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
@@ -425,7 +466,7 @@ function App() {
           </div>
           <div class="skills-card-name">React</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="flip-up">
           <div class="skills-card-img">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
               <path
@@ -436,7 +477,7 @@ function App() {
           </div>
           <div class="skills-card-name">NodeJs</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-down">
           <div class="skills-card-img">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
               <path fill="none" d="M0 0h128v128H0z" />
@@ -448,7 +489,7 @@ function App() {
           </div>
           <div class="skills-card-name">Redux</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-down">
           <div  class="skills-card-img">
             {" "}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
@@ -461,7 +502,7 @@ function App() {
           </div>
           <div class="skills-card-name">JavaScript</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-down">
           <div  class="skills-card-img">
             {" "}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
@@ -494,7 +535,7 @@ function App() {
           <div class="skills-card-name">Css 3</div>
         </div>
 
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-down">
           <div class="skills-card-img">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
               <path
@@ -517,32 +558,32 @@ function App() {
           </div>
           <div class="skills-card-name">HTML5</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-down">
           <div class="skills-card-img">
             <Img src="./Typescript.png" alt="Typescript" />
           </div>
           <div class="skills-card-name">Typescript</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-down">
           <div>
           <svg fill="#000000"  viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M256,48,496,464H16Z"/></svg>
           </div>
           <div>Vercel</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-down">
           <div>
           <svg  viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none"><title>file_type_vite</title><path d="M29.8836 6.146L16.7418 29.6457c-.2714.4851-.9684.488-1.2439.0052L2.0956 6.1482c-.3-.5262.1498-1.1635.746-1.057l13.156 2.3516a.7144.7144 0 00.2537-.0004l12.8808-2.3478c.5942-.1083 1.0463.5241.7515 1.0513z" fill="url(#paint0_linear)"/><path d="M22.2644 2.0069l-9.7253 1.9056a.3571.3571 0 00-.2879.3294l-.5982 10.1038c-.014.238.2045.4227.4367.3691l2.7077-.6248c.2534-.0585.4823.1647.4302.4194l-.8044 3.9393c-.0542.265.1947.4918.4536.4132l1.6724-.5082c.2593-.0787.5084.1487.4536.414l-1.2784 6.1877c-.08.387.4348.598.6495.2662L16.5173 25 24.442 9.1848c.1327-.2648-.096-.5667-.387-.5106l-2.787.5379c-.262.0505-.4848-.1934-.4109-.4497l1.8191-6.306c.074-.2568-.1496-.5009-.4118-.4495z" fill="url(#paint1_linear)"/><defs id="defs50"><linearGradient id="paint0_linear" x1="6.0002" y1="32.9999" x2="235" y2="344" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.07142 0 0 .07142 1.3398 1.8944)"><stop stop-color="#41D1FF" id="stop38"/><stop offset="1" stop-color="#BD34FE" id="stop40"/></linearGradient><linearGradient id="paint1_linear" x1="194.651" y1="8.8182" x2="236.076" y2="292.989" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.07142 0 0 .07142 1.3398 1.8944)"><stop stop-color="#FFEA83" id="stop43"/><stop offset=".0833" stop-color="#FFDD35" id="stop45"/><stop offset="1" stop-color="#FFA800" id="stop47"/></linearGradient></defs></svg>
           </div>
           <div>Vite</div>
         </div>
        
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-up">
           <div>
             <Img src="./chakra.png" alt="chakra" />
           </div>
           <div>Chakra UI</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-up">
           <div>
           <Img src="https://iconape.com/wp-content/files/cf/353046/svg/next-js-seeklogo.com.svg" p={'3px'}  alt='jest'/>
            </div>
@@ -550,43 +591,45 @@ function App() {
         </div>
        
       </Box>
-    </TabPanel>
-    <TabPanel>
+    </TabPanel> */}
+                                   {/*BackEnd */}
+    {/* <TabPanel>
     <Box display={'grid'} gridTemplateColumns={{base:"repeat(2,1fr)",md:"repeat(3,1fr)",lg:"repeat(5,1fr)"} } gap="10px" >
         
-     <div className="skillsbox">
+     <div className="skillsbox" data-aos="fade-down-left">
           <div>
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill-rule="evenodd" clip-rule="evenodd" fill="#439934" d="M88.038 42.812c1.605 4.643 2.761 9.383 3.141 14.296.472 6.095.256 12.147-1.029 18.142-.035.165-.109.32-.164.48-.403.001-.814-.049-1.208.012-3.329.523-6.655 1.065-9.981 1.604-3.438.557-6.881 1.092-10.313 1.687-1.216.21-2.721-.041-3.212 1.641-.014.046-.154.054-.235.08l.166-10.051-.169-24.252 1.602-.275c2.62-.429 5.24-.864 7.862-1.281 3.129-.497 6.261-.98 9.392-1.465 1.381-.215 2.764-.412 4.148-.618z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#45A538" d="M61.729 110.054c-1.69-1.453-3.439-2.842-5.059-4.37-8.717-8.222-15.093-17.899-18.233-29.566-.865-3.211-1.442-6.474-1.627-9.792-.13-2.322-.318-4.665-.154-6.975.437-6.144 1.325-12.229 3.127-18.147l.099-.138c.175.233.427.439.516.702 1.759 5.18 3.505 10.364 5.242 15.551 5.458 16.3 10.909 32.604 16.376 48.9.107.318.384.579.583.866l-.87 2.969z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#46A037" d="M88.038 42.812c-1.384.206-2.768.403-4.149.616-3.131.485-6.263.968-9.392 1.465-2.622.417-5.242.852-7.862 1.281l-1.602.275-.012-1.045c-.053-.859-.144-1.717-.154-2.576-.069-5.478-.112-10.956-.18-16.434-.042-3.429-.105-6.857-.175-10.285-.043-2.13-.089-4.261-.185-6.388-.052-1.143-.236-2.28-.311-3.423-.042-.657.016-1.319.029-1.979.817 1.583 1.616 3.178 2.456 4.749 1.327 2.484 3.441 4.314 5.344 6.311 7.523 7.892 12.864 17.068 16.193 27.433z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#409433" d="M65.036 80.753c.081-.026.222-.034.235-.08.491-1.682 1.996-1.431 3.212-1.641 3.432-.594 6.875-1.13 10.313-1.687 3.326-.539 6.652-1.081 9.981-1.604.394-.062.805-.011 1.208-.012-.622 2.22-1.112 4.488-1.901 6.647-.896 2.449-1.98 4.839-3.131 7.182a49.142 49.142 0 01-6.353 9.763c-1.919 2.308-4.058 4.441-6.202 6.548-1.185 1.165-2.582 2.114-3.882 3.161l-.337-.23-1.214-1.038-1.256-2.753a41.402 41.402 0 01-1.394-9.838l.023-.561.171-2.426c.057-.828.133-1.655.168-2.485.129-2.982.241-5.964.359-8.946z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#4FAA41" d="M65.036 80.753c-.118 2.982-.23 5.964-.357 8.947-.035.83-.111 1.657-.168 2.485l-.765.289c-1.699-5.002-3.399-9.951-5.062-14.913-2.75-8.209-5.467-16.431-8.213-24.642a4498.887 4498.887 0 00-6.7-19.867c-.105-.31-.407-.552-.617-.826l4.896-9.002c.168.292.39.565.496.879a6167.476 6167.476 0 016.768 20.118c2.916 8.73 5.814 17.467 8.728 26.198.116.349.308.671.491 1.062l.67-.78-.167 10.052z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#4AA73C" d="M43.155 32.227c.21.274.511.516.617.826a4498.887 4498.887 0 016.7 19.867c2.746 8.211 5.463 16.433 8.213 24.642 1.662 4.961 3.362 9.911 5.062 14.913l.765-.289-.171 2.426-.155.559c-.266 2.656-.49 5.318-.814 7.968-.163 1.328-.509 2.632-.772 3.947-.198-.287-.476-.548-.583-.866-5.467-16.297-10.918-32.6-16.376-48.9a3888.972 3888.972 0 00-5.242-15.551c-.089-.263-.34-.469-.516-.702l3.272-8.84z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#57AE47" d="M65.202 70.702l-.67.78c-.183-.391-.375-.714-.491-1.062-2.913-8.731-5.812-17.468-8.728-26.198a6167.476 6167.476 0 00-6.768-20.118c-.105-.314-.327-.588-.496-.879l6.055-7.965c.191.255.463.482.562.769 1.681 4.921 3.347 9.848 5.003 14.778 1.547 4.604 3.071 9.215 4.636 13.813.105.308.47.526.714.786l.012 1.045c.058 8.082.115 16.167.171 24.251z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#60B24F" d="M65.021 45.404c-.244-.26-.609-.478-.714-.786-1.565-4.598-3.089-9.209-4.636-13.813-1.656-4.93-3.322-9.856-5.003-14.778-.099-.287-.371-.514-.562-.769 1.969-1.928 3.877-3.925 5.925-5.764 1.821-1.634 3.285-3.386 3.352-5.968.003-.107.059-.214.145-.514l.519 1.306c-.013.661-.072 1.322-.029 1.979.075 1.143.259 2.28.311 3.423.096 2.127.142 4.258.185 6.388.069 3.428.132 6.856.175 10.285.067 5.478.111 10.956.18 16.434.008.861.098 1.718.152 2.577z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#A9AA88" d="M62.598 107.085c.263-1.315.609-2.62.772-3.947.325-2.649.548-5.312.814-7.968l.066-.01.066.011a41.402 41.402 0 001.394 9.838c-.176.232-.425.439-.518.701-.727 2.05-1.412 4.116-2.143 6.166-.1.28-.378.498-.574.744l-.747-2.566.87-2.969z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#B6B598" d="M62.476 112.621c.196-.246.475-.464.574-.744.731-2.05 1.417-4.115 2.143-6.166.093-.262.341-.469.518-.701l1.255 2.754c-.248.352-.59.669-.728 1.061l-2.404 7.059c-.099.283-.437.483-.663.722l-.695-3.985z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C1A7" d="M63.171 116.605c.227-.238.564-.439.663-.722l2.404-7.059c.137-.391.48-.709.728-1.061l1.215 1.037c-.587.58-.913 1.25-.717 2.097l-.369 1.208c-.168.207-.411.387-.494.624-.839 2.403-1.64 4.819-2.485 7.222-.107.305-.404.544-.614.812-.109-1.387-.22-2.771-.331-4.158z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#CECDB7" d="M63.503 120.763c.209-.269.506-.508.614-.812.845-2.402 1.646-4.818 2.485-7.222.083-.236.325-.417.494-.624l-.509 5.545c-.136.157-.333.294-.398.477-.575 1.614-1.117 3.24-1.694 4.854-.119.333-.347.627-.525.938-.158-.207-.441-.407-.454-.623-.051-.841-.016-1.688-.013-2.533z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#DBDAC7" d="M63.969 123.919c.178-.312.406-.606.525-.938.578-1.613 1.119-3.239 1.694-4.854.065-.183.263-.319.398-.477l.012 3.64-1.218 3.124-1.411-.495z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#EBE9DC" d="M65.38 124.415l1.218-3.124.251 3.696-1.469-.572z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#CECDB7" d="M67.464 110.898c-.196-.847.129-1.518.717-2.097l.337.23-1.054 1.867z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#4FAA41" d="M64.316 95.172l-.066-.011-.066.01.155-.559-.023.56z"/></svg>
           </div>
           <div>MongoDb</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-down-left">
           <div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path d="M126.67 98.44c-4.56 1.16-7.38.05-9.91-3.75-5.68-8.51-11.95-16.63-18-24.9-.78-1.07-1.59-2.12-2.6-3.45C89 76 81.85 85.2 75.14 94.77c-2.4 3.42-4.92 4.91-9.4 3.7l26.92-36.13L67.6 29.71c4.31-.84 7.29-.41 9.93 3.45 5.83 8.52 12.26 16.63 18.67 25.21 6.45-8.55 12.8-16.67 18.8-25.11 2.41-3.42 5-4.72 9.33-3.46-3.28 4.35-6.49 8.63-9.72 12.88-4.36 5.73-8.64 11.53-13.16 17.14-1.61 2-1.35 3.3.09 5.19C109.9 76 118.16 87.1 126.67 98.44zM1.33 61.74c.72-3.61 1.2-7.29 2.2-10.83 6-21.43 30.6-30.34 47.5-17.06C60.93 41.64 63.39 52.62 62.9 65H7.1c-.84 22.21 15.15 35.62 35.53 28.78 7.15-2.4 11.36-8 13.47-15 1.07-3.51 2.84-4.06 6.14-3.06-1.69 8.76-5.52 16.08-13.52 20.66-12 6.86-29.13 4.64-38.14-4.89C5.26 85.89 3 78.92 2 71.39c-.15-1.2-.46-2.38-.7-3.57q.03-3.04.03-6.08zm5.87-1.49h50.43c-.33-16.06-10.33-27.47-24-27.57-15-.12-25.78 11.02-26.43 27.57z"/></svg>   </div>
           <div>ExpressJs</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-down-left">
           <div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill="#83CD29" d="M112.771 30.334L68.674 4.729c-2.781-1.584-6.402-1.584-9.205 0L14.901 30.334C12.031 31.985 10 35.088 10 38.407v51.142c0 3.319 2.084 6.423 4.954 8.083l11.775 6.688c5.628 2.772 7.617 2.772 10.178 2.772 8.333 0 13.093-5.039 13.093-13.828v-50.49c0-.713-.371-1.774-1.071-1.774h-5.623C42.594 41 41 42.061 41 42.773v50.49c0 3.896-3.524 7.773-10.11 4.48L18.723 90.73c-.424-.23-.723-.693-.723-1.181V38.407c0-.482.555-.966.982-1.213l44.424-25.561c.415-.235 1.025-.235 1.439 0l43.882 25.555c.42.253.272.722.272 1.219v51.142c0 .488.183.963-.232 1.198l-44.086 25.576c-.378.227-.847.227-1.261 0l-11.307-6.749c-.341-.198-.746-.269-1.073-.086-3.146 1.783-3.726 2.02-6.677 3.043-.726.253-1.797.692.41 1.929l14.798 8.754a9.294 9.294 0 004.647 1.246c1.642 0 3.25-.426 4.667-1.246l43.885-25.582c2.87-1.672 4.23-4.764 4.23-8.083V38.407c0-3.319-1.36-6.414-4.229-8.073zM77.91 81.445c-11.726 0-14.309-3.235-15.17-9.066-.1-.628-.633-1.379-1.272-1.379h-5.731c-.709 0-1.279.86-1.279 1.566 0 7.466 4.059 16.512 23.453 16.512 14.039 0 22.088-5.455 22.088-15.109 0-9.572-6.467-12.084-20.082-13.886-13.762-1.819-15.16-2.738-15.16-5.962 0-2.658 1.184-6.203 11.374-6.203 9.105 0 12.461 1.954 13.842 8.091.118.577.645.991 1.24.991h5.754c.354 0 .692-.143.94-.396.24-.272.367-.613.335-.979-.891-10.568-7.912-15.493-22.112-15.493-12.631 0-20.166 5.334-20.166 14.275 0 9.698 7.497 12.378 19.622 13.577 14.505 1.422 15.633 3.542 15.633 6.395 0 4.955-3.978 7.066-13.309 7.066z"/></svg>
           </div>
           <div>NodeJs</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-down-left">
           <div>
             <Img src="./cypress.webp" alt="cypress"/>
           </div>
-          <div>Cyress</div>
+          <div>Cypress</div>
         </div>
        
         
        
       </Box>
-    </TabPanel>
-    <TabPanel>
+    </TabPanel> */}
+                                   {/* Tools */}
+    {/* <TabPanel>
       <Box display={'grid'} gridTemplateColumns={{base:"repeat(2,1fr)",md:"repeat(3,1fr)",lg:"repeat(5,1fr)"} } gap="10px" >
         
         
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-up-left">
           <div  class="skills-card-img">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
               <path
@@ -598,7 +641,7 @@ function App() {
           <div class="skills-card-name">npm</div>
         </div>
       
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-up-left">
           <div class="skills-card-img">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
               <path
@@ -609,20 +652,20 @@ function App() {
           </div>
           <div class="skills-card-name">Git</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="flip-up">
           <div class="skills-card-img" style={{padding:"3px"}}>
           <svg  viewBox="-11.9 -2 1003.9 995.6"  xmlns="http://www.w3.org/2000/svg"><path d="m12.1 353.9s-24-17.3 4.8-40.4l67.1-60s19.2-20.2 39.5-2.6l619.2 468.8v224.8s-.3 35.3-45.6 31.4z" fill="#2489ca"/><path d="m171.7 498.8-159.6 145.1s-16.4 12.2 0 34l74.1 67.4s17.6 18.9 43.6-2.6l169.2-128.3z" fill="#1070b3"/><path d="m451.9 500 292.7-223.5-1.9-223.6s-12.5-48.8-54.2-23.4l-389.5 354.5z" fill="#0877b9"/><path d="m697.1 976.2c17 17.4 37.6 11.7 37.6 11.7l228.1-112.4c29.2-19.9 25.1-44.6 25.1-44.6v-671.2c0-29.5-30.2-39.7-30.2-39.7l-197.7-95.3c-43.2-26.7-71.5 4.8-71.5 4.8s36.4-26.2 54.2 23.4v887.5c0 6.1-1.3 12.1-3.9 17.5-5.2 10.5-16.5 20.3-43.6 16.2z" fill="#3c99d4"/></svg>
           </div>
           <div class="skills-card-name">Visual Studio</div>
         </div>
-        <div className="skillsbox">
+        <div className="skillsbox" data-aos="fade-up-left">
           <div>
             <Img src="https://iconape.com/wp-content/png_logo_vector/jest-logo.png" p={"5px"} alt="jest"/>
           </div>
           <div>Jest</div>
         </div>
       </Box>  
-    </TabPanel>
+    </TabPanel> */}
   </TabPanels>
 </Tabs>
 </Flex>
@@ -768,14 +811,14 @@ function App() {
           </div>
         </div> */}
       </div>
-             {/* Projects */}
-      <div id="projects" className="project">
+            
+      <div id="projects" className="project" data-aos="flip-right">
         <div>
           <h1>Projects </h1>
         </div>
         <Box  display={'grid'} gridTemplateColumns={{base:"repeat(1,1fr)",md:"repeat(1,1fr)",lg:"repeat(2,1fr)"} } margin={'auto'} gap="10px" >
       
-          <div className="projectbox project-card">
+          <div className="projectbox project-card"  data-aos="zoom-in-up">
             <div>
               <Img
                 src="./myntraclone.jpeg"
@@ -873,13 +916,14 @@ function App() {
               </span>
             </div>
           </div>
-          <div className="projectbox project-card">
-            <div>
-              <Img
+          <div className="projectbox project-card" data-aos="zoom-in-down">
+            <div >
+              <img
                 src="./bluemercury.jpeg"
                 alt="blue mercury clone"
                 borderRadius={"10px"}
               />
+            
             </div>
 
             <div>
@@ -949,7 +993,7 @@ function App() {
               </span>
             </div>
           </div>
-          <div className="projectbox project-card">
+          <div className="projectbox project-card" data-aos="zoom-in-left">
             <div>
               <Img
                 src="./wrike.png"
@@ -1028,7 +1072,7 @@ function App() {
               </span>
             </div>
           </div>
-          <div className="projectbox project-card">
+          <div className="projectbox project-card" data-aos="zoom-in-right">
             <div>
               <Img
                 src="./jefit.png"
@@ -1105,10 +1149,10 @@ function App() {
           </div>
         </Box>
       </div>
-       {/* calender */}
-      <div id="calender" className="calender">
+       
+      <div id="calender" className="calender" data-aos="fade-down-right">
         <center>Calender</center>
-        <center>
+        <center  >
           <img
             src="https://ghchart.rshah.org/sushantshekhar82"
             alt="sushantshekhar82"
@@ -1116,7 +1160,7 @@ function App() {
             height="500px"
             style={{ margin: "5px" }}
             class="react-activity-calendar" 
-          
+           
           />
         </center>
        
@@ -1197,8 +1241,8 @@ function App() {
                   </svg>
                 </a> </span>
       </center>
-       {/* contact */}
-      <div id="contact" className="contact1">
+      
+      <div id="contact" className="contact1" data-aos="flip-left">
         <div className="hideform">
           <Img
             src="https://avighnaclasses.com/wp-content/uploads/2022/12/81732-contact-us.gif"
@@ -1318,8 +1362,12 @@ function App() {
       
       <div>
         <div className="bottom">Designed and Developed by Sushant Shekhar,All rights reserved.</div>
+      
       </div>
+   
+
     </div>
+          
   );
 }
 
