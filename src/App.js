@@ -27,7 +27,9 @@ function App() {
     let link = document.createElement("a");
     link.download = "Sushant_Shekhar_Resume.pdf";
     link.href = sushant;
+   
     link.click();
+   
     link.remove();
   }
 
@@ -50,12 +52,7 @@ function App() {
   
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [overlay, setOverlay] = React.useState(<OverlayOne />)
-    const GlobalStyles = createGlobalStyle`
-    style {
-      --i: 0;
-     
-    }
-  `;
+
   return (
     <div className="App">
       {/* Navbar  */}
@@ -95,8 +92,8 @@ function App() {
             <li>
               {" "}
               <button class="button-21" style={{display:"flex",gap:5}} id="resume-button-1"  onClick={() => {
-                    window.location.href =
-                      "https://drive.google.com/file/d/1xMMFWpietjNymM1NeB3wafLPa4iBI9q3/view";
+                   
+                  window.open("https://drive.google.com/file/d/1xMMFWpietjNymM1NeB3wafLPa4iBI9q3/view", "_blank")
                     downloadFile();
                   }}>
               
@@ -184,8 +181,7 @@ function App() {
             </span>
           </h2>
           <button class="button-21" style={{display:"flex",gap:5,height:"50px"}} id="resume-button-2"  onClick={() => {
-                    window.location.href =
-                      "https://drive.google.com/file/d/1xMMFWpietjNymM1NeB3wafLPa4iBI9q3/view";
+                     window.open("https://drive.google.com/file/d/1xMMFWpietjNymM1NeB3wafLPa4iBI9q3/view", "_blank")
                     downloadFile();
                   }}>
               
@@ -199,29 +195,14 @@ function App() {
           <h1 style={{ marginTop: "5px" }}>About me</h1>
         </div>
         <div className="aboutgrid">
-          <div>
-          {/* <Animationbtn/> */}
+          <div >
+             <div className="imagebox">
+             <img src="./mainprofile.png" alt="sushant shekhar" class="home-img" />
+             </div>
         
-          <img src="./profileimg2.png" alt="sushant shekhar" class="home-img" />
+          {/* <img src="./profileimg2.png" alt="sushant shekhar" class="home-img" /> */}
           
-          {/* <div className="cube">
-            <div>
-              
-              <span><img src="./profile.png" alt="sushant shekhar" class="home-img" /></span>
-              <span  style={{'--i',1}}><img src="./profile.png" alt="sushant shekhar" class="home-img" /></span>
-              <span  style={{'--i',2}}><img src="./profile.png" alt="sushant shekhar" class="home-img" /></span>
-              <span  style={{'--i',3}}><img src="./profile.png" alt="sushant shekhar" class="home-img" /></span>
-           
-              <span style={`${--i}:${1}`}></span>
-              <span style={`${--i}:${2}`}></span>
-              <span style={`${--i}:${3}`}></span>
-            </div>
-          </div> */}
-          
-          {/* <div id="div5">
-    Lorem i 
-  </div>  */}
-          </div>
+        </div>
           <div>
           <div className="box">
             <h2>Innovative, solution-driven web developer with proficiency
