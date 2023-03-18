@@ -122,7 +122,7 @@ function App() {
               {" "}
               <a id="resume-link-1">
                 <button
-                  class="button-21"
+                  className="button-21 nav-link resume"
                   style={{ display: "flex", gap: 5 }}
                   id="resume-button-1"
                   onClick={() => {
@@ -1032,7 +1032,7 @@ function App() {
             lg: "repeat(2,1fr)",
           }}
           margin={"auto"}
-          padding="5px"
+          padding="10px"
           gap="10px"
         >
           <div className="projectbox project-card" data-aos="zoom-in-up">
@@ -1585,7 +1585,7 @@ function App() {
         className="calender react-activity-calendar"
         data-aos="fade-down-right"
       >
-        <center>CALENDER</center>
+        <h1>CALENDER</h1>
         <center>
           <img
             src="https://ghchart.rshah.org/sushantshekhar82"
@@ -1654,9 +1654,7 @@ function App() {
           </div>
         </center>
       </div>
-      <center
-        style={{ fontSize: "35px", color: "#0A7AD6", fontWeight: "bold" }}
-      >
+      <center className="gradient">
         HAVE A PROJECT? OR JUST LOOKING TO HIRE?
         <span style={{ display: "flex", justifyContent: "center", gap: 10 }}>
           <a
