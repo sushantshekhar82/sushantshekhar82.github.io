@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.4cd34710.css",
-    "main.js": "/static/js/main.cb239cf5.js",
+    "main.js": "/static/js/main.d33d1a7b.js",
     "static/js/787.128fc6e9.chunk.js": "/static/js/787.128fc6e9.chunk.js",
     "static/media/aboutimage.jpg": "/static/media/aboutimage.9a24a0c27d9d9cf0c34b.jpg",
     "static/media/Sushant_Shekhar_Resume.pdf": "/static/media/Sushant_Shekhar_Resume.808fdd9fb46a5b3257cb.pdf",
     "index.html": "/index.html",
     "main.4cd34710.css.map": "/static/css/main.4cd34710.css.map",
-    "main.cb239cf5.js.map": "/static/js/main.cb239cf5.js.map",
+    "main.d33d1a7b.js.map": "/static/js/main.d33d1a7b.js.map",
     "787.128fc6e9.chunk.js.map": "/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4cd34710.css",
-    "static/js/main.cb239cf5.js"
+    "static/js/main.d33d1a7b.js"
   ]
 }
