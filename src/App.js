@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   Flex,
-  Grid,
   Img,
   Modal,
   ModalBody,
@@ -11,7 +10,6 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Spinner,
   Tab,
   TabList,
   TabPanel,
@@ -30,7 +28,7 @@ import { FiPhoneCall } from "react-icons/fi";
 import { FaCloudDownloadAlt } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import sushant from "./Sushant_Shekhar_Resume.pdf";
-import { createGlobalStyle } from "styled-components";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 function App() {
@@ -43,7 +41,7 @@ function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [messsage, setMessage] = useState("");
-  const [loader, setLoader] = useState(true);
+
   function downloadFile() {
     let link = document.createElement("a");
     link.download = "Sushant_Shekhar_Resume.pdf";
@@ -53,20 +51,17 @@ function App() {
 
     link.remove();
   }
+  function resume() {
+    window.open(
+      "https://drive.google.com/file/d/1xMMFWpietjNymM1NeB3wafLPa4iBI9q3/view",
+      "_blank"
+    );
+  }
 
   const OverlayOne = () => (
     <ModalOverlay
       bg="blackAlpha.300"
       backdropFilter="blur(10px) hue-rotate(90deg)"
-    />
-  );
-
-  const OverlayTwo = () => (
-    <ModalOverlay
-      bg="none"
-      backdropFilter="auto"
-      backdropInvert="80%"
-      backdropBlur="2px"
     />
   );
 
@@ -119,8 +114,34 @@ function App() {
               </a>
             </li>
             <li>
-              {" "}
-              <a id="resume-link-1">
+              <button
+                id="resume-button-1"
+                class="button-21"
+                style={{
+                  display: "flex",
+                  gap: 5,
+                  height: "40px",
+
+                  fontWeight: "bold",
+                }}
+                onClick={resume}
+              >
+                <a
+                  id="resume-link-1"
+                  href={sushant}
+                  download="Sushant_Shekhar_Resume.pdf"
+                  target="_blank"
+                  style={{
+                    display: "flex",
+                    gap: 5,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  Resume <FaCloudDownloadAlt color="black" size={25} />
+                </a>
+              </button>
+              {/* <div >
                 <button
                   className="button-21 nav-link resume"
                   style={{ display: "flex", gap: 5 }}
@@ -135,7 +156,7 @@ function App() {
                 >
                   Resume <FaCloudDownloadAlt color="black" size={25} />
                 </button>
-              </a>
+              </div> */}
             </li>
             <span
               style={{
@@ -215,34 +236,40 @@ function App() {
               />
             </span>
           </h2>
-          <a id="resume-link-2">
-            <button
-              class="button-21"
+
+          <button
+            id="resume-button-2"
+            class="button-21"
+            style={{
+              display: "flex",
+              gap: 5,
+              height: "50px",
+
+              fontWeight: "bold",
+            }}
+            onClick={resume}
+          >
+            <a
+              id="resume-link-2"
+              href={sushant}
+              download="Sushant_Shekhar_Resume.pdf"
+              target="_blank"
               style={{
                 display: "flex",
                 gap: 5,
-                height: "50px",
-                fontWeight: "bold",
-              }}
-              id="resume-button-2"
-              onClick={() => {
-                window.open(
-                  "https://drive.google.com/file/d/1xMMFWpietjNymM1NeB3wafLPa4iBI9q3/view",
-                  "_blank"
-                );
-                downloadFile();
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
               Resume <FaCloudDownloadAlt color="black" size={25} />
-            </button>
-          </a>
+            </a>
+          </button>
         </div>
       </div>
 
-      <div id="about" className="about1 about section" data-aos="fade-up">
-        <div>
-          <h1>ABOUT ME</h1>
-        </div>
+      <div id="about" className="about section" data-aos="fade-up">
+        <h1>ABOUT ME</h1>
+
         <div className="aboutgrid">
           <div>
             <div className="imagebox">
@@ -256,24 +283,23 @@ function App() {
             {/* <img src="./profileimg2.png" alt="sushant shekhar" class="home-img" /> */}
           </div>
           <div>
-            <div id="user-detail-intro" className="box">
-              <h2>
-                Innovative, solution-driven web developer with proficiency in
-                MERN stack and capable of writing production-ready code using
-                HTML, CSS, and JavaScript. Proven experience in developing
-                multiple web-based applications with good collaboration skills
-                and can easily be adept in the work environment.
+            <div className="box">
+              <h2 id="user-detail-intro">
+                About:-Innovative, solution-driven web developer with
+                proficiency in MERN stack and capable of writing
+                production-ready code using HTML, CSS, and JavaScript. Proven
+                experience in developing multiple web-based applications with
+                good collaboration skills and can easily be adept in the work
+                environment.
               </h2>
             </div>
           </div>
         </div>
       </div>
 
-      <div id="skills" className="skill  skills-card" data-aos="flip-left">
-        <div>
-          {" "}
-          <h1 style={{ marginTop: "5px" }}>SKILLS</h1>
-        </div>
+      <div id="skills" className="skill skills-card" data-aos="flip-left">
+        <h1 style={{ marginTop: "5px" }}>SKILLS</h1>
+
         <Flex justifyContent={"center"} alignItems={"center"}>
           <Tabs variant="soft-rounded" colorScheme="green" fontWeight={"bold"}>
             <TabList fontSize={{ base: "14px", md: "18px", lg: "20px" }}>
@@ -294,8 +320,8 @@ function App() {
                   }}
                   gap="10px"
                 >
-                  <div className="skillsbox" data-aos="fade-up">
-                    <div class="skills-card-img">
+                  <div className="skillsbox skills-card" data-aos="fade-up">
+                    <div className="skills-card-img">
                       {" "}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -307,10 +333,10 @@ function App() {
                         </g>
                       </svg>
                     </div>
-                    <div class="skills-card-name">React</div>
+                    <div className="skills-card-name">React</div>
                   </div>
-                  <div className="skillsbox" data-aos="fade-up">
-                    <div>
+                  <div className="skillsbox skills-card" data-aos="fade-up">
+                    <div className="skills-card-img">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 128 128"
@@ -413,20 +439,21 @@ function App() {
                         />
                       </svg>
                     </div>
-                    <div>MongoDb</div>
+                    <div className="skills-card-name">MongoDb</div>
                   </div>
-                  <div className="skillsbox" data-aos="fade-up">
+                  <div className="skillsbox skills-card" data-aos="fade-up">
                     <div>
                       <Img
                         src="https://iconape.com/wp-content/files/cf/353046/svg/next-js-seeklogo.com.svg"
                         p={"3px"}
                         alt="jest"
+                        className="skills-card-img"
                       />
                     </div>
-                    <div>NextJs</div>
+                    <div className="skills-card-name"> NextJs</div>
                   </div>
-                  <div className="skillsbox" data-aos="fade-up">
-                    <div class="skills-card-img">
+                  <div className="skillsbox skills-card" data-aos="fade-up">
+                    <div className="skills-card-img">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 128 128"
@@ -437,10 +464,10 @@ function App() {
                         />
                       </svg>{" "}
                     </div>
-                    <div class="skills-card-name">NodeJs</div>
+                    <div className="skills-card-name">NodeJs</div>
                   </div>
-                  <div className="skillsbox" data-aos="fade-up">
-                    <div class="skills-card-img">
+                  <div className="skillsbox skills-card" data-aos="fade-up">
+                    <div className="skills-card-img">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 128 128"
@@ -452,10 +479,10 @@ function App() {
                         />
                       </svg>{" "}
                     </div>
-                    <div class="skills-card-name">Redux</div>
+                    <div className="skills-card-name">Redux</div>
                   </div>
-                  <div className="skillsbox" data-aos="fade-up">
-                    <div class="skills-card-img">
+                  <div className="skillsbox skills-card" data-aos="fade-up">
+                    <div className="skills-card-img">
                       {" "}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -471,14 +498,15 @@ function App() {
                         />
                       </svg>{" "}
                     </div>
-                    <div class="skills-card-name">JavaScript</div>
+                    <div className="skills-card-name">JavaScript</div>
                   </div>
-                  <div className="skillsbox" data-aos="fade-up">
-                    <div class="skills-card-img">
+                  <div className="skillsbox skills-card" data-aos="fade-up">
+                    <div>
                       {" "}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 128 128"
+                        className="skills-card-img"
                       >
                         <path
                           fill="#1572B6"
@@ -506,14 +534,15 @@ function App() {
                         />
                       </svg>
                     </div>
-                    <div class="skills-card-name">Css 3</div>
+                    <div className="skills-card-name">Css 3</div>
                   </div>
 
-                  <div className="skillsbox" data-aos="fade-up">
-                    <div class="skills-card-img">
+                  <div className="skillsbox skills-card" data-aos="fade-up">
+                    <div>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 128 128"
+                        className="skills-card-img"
                       >
                         <path
                           fill="#E44D26"
@@ -533,76 +562,78 @@ function App() {
                         />
                       </svg>
                     </div>
-                    <div class="skills-card-name">HTML5</div>
+                    <div className="skills-card-name">HTML5</div>
                   </div>
-                  <div className="skillsbox" data-aos="fade-up">
-                    <div class="skills-card-img">
-                      <Img src="./Typescript.png" alt="Typescript" />
+                  <div className="skillsbox skills-card" data-aos="fade-up">
+                    <div>
+                      <Img
+                        src="./Typescript.png"
+                        alt="Typescript"
+                        className="skills-card-img"
+                      />
                     </div>
-                    <div class="skills-card-name">Typescript</div>
+                    <div className="skills-card-name">Typescript</div>
                   </div>
-                  <div className="skillsbox" data-aos="fade-up">
+                  <div className="skillsbox skills-card" data-aos="fade-up">
                     <div>
                       <svg
                         fill="#000000"
                         viewBox="0 0 512 512"
                         xmlns="http://www.w3.org/2000/svg"
+                        className="skills-card-img"
                       >
                         <path fill-rule="evenodd" d="M256,48,496,464H16Z" />
                       </svg>
                     </div>
-                    <div>Vercel</div>
+                    <div className="skills-card-name">Vercel</div>
                   </div>
-                  <div className="skillsbox" data-aos="fade-up">
+                  <div className="skillsbox skills-card" data-aos="fade-up">
                     <div>
                       <Img
                         src="https://www.svgrepo.com/show/374167/vite.svg"
                         alt="vite"
+                        className="skills-card-img"
                       />
                     </div>
-                    <div>Vite</div>
+                    <div className="skills-card-name">Vite</div>
                   </div>
 
-                  <div className="skillsbox" data-aos="fade-up">
+                  <div className="skillsbox skills-card" data-aos="fade-up">
                     <div>
-                      <Img src="./chakra.png" alt="chakra" />
+                      <Img
+                        src="./chakra.png"
+                        alt="chakra"
+                        className="skills-card-img"
+                      />
                     </div>
-                    <div>Chakra UI</div>
+                    <div className="skills-card-name">Chakra UI</div>
                   </div>
 
-                  <div className="skillsbox" data-aos="fade-up">
+                  <div className="skillsbox skills-card" data-aos="fade-up">
                     <div>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 128 128"
+                        className="skills-card-img"
                       >
                         <path d="M126.67 98.44c-4.56 1.16-7.38.05-9.91-3.75-5.68-8.51-11.95-16.63-18-24.9-.78-1.07-1.59-2.12-2.6-3.45C89 76 81.85 85.2 75.14 94.77c-2.4 3.42-4.92 4.91-9.4 3.7l26.92-36.13L67.6 29.71c4.31-.84 7.29-.41 9.93 3.45 5.83 8.52 12.26 16.63 18.67 25.21 6.45-8.55 12.8-16.67 18.8-25.11 2.41-3.42 5-4.72 9.33-3.46-3.28 4.35-6.49 8.63-9.72 12.88-4.36 5.73-8.64 11.53-13.16 17.14-1.61 2-1.35 3.3.09 5.19C109.9 76 118.16 87.1 126.67 98.44zM1.33 61.74c.72-3.61 1.2-7.29 2.2-10.83 6-21.43 30.6-30.34 47.5-17.06C60.93 41.64 63.39 52.62 62.9 65H7.1c-.84 22.21 15.15 35.62 35.53 28.78 7.15-2.4 11.36-8 13.47-15 1.07-3.51 2.84-4.06 6.14-3.06-1.69 8.76-5.52 16.08-13.52 20.66-12 6.86-29.13 4.64-38.14-4.89C5.26 85.89 3 78.92 2 71.39c-.15-1.2-.46-2.38-.7-3.57q.03-3.04.03-6.08zm5.87-1.49h50.43c-.33-16.06-10.33-27.47-24-27.57-15-.12-25.78 11.02-26.43 27.57z" />
                       </svg>{" "}
                     </div>
-                    <div>ExpressJs</div>
+                    <div className="skills-card-name">ExpressJs</div>
                   </div>
-                  <div className="skillsbox" data-aos="fade-up">
+
+                  <div className="skillsbox skills-card" data-aos="fade-up">
                     <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 128 128"
-                      >
-                        <path
-                          fill="#83CD29"
-                          d="M112.771 30.334L68.674 4.729c-2.781-1.584-6.402-1.584-9.205 0L14.901 30.334C12.031 31.985 10 35.088 10 38.407v51.142c0 3.319 2.084 6.423 4.954 8.083l11.775 6.688c5.628 2.772 7.617 2.772 10.178 2.772 8.333 0 13.093-5.039 13.093-13.828v-50.49c0-.713-.371-1.774-1.071-1.774h-5.623C42.594 41 41 42.061 41 42.773v50.49c0 3.896-3.524 7.773-10.11 4.48L18.723 90.73c-.424-.23-.723-.693-.723-1.181V38.407c0-.482.555-.966.982-1.213l44.424-25.561c.415-.235 1.025-.235 1.439 0l43.882 25.555c.42.253.272.722.272 1.219v51.142c0 .488.183.963-.232 1.198l-44.086 25.576c-.378.227-.847.227-1.261 0l-11.307-6.749c-.341-.198-.746-.269-1.073-.086-3.146 1.783-3.726 2.02-6.677 3.043-.726.253-1.797.692.41 1.929l14.798 8.754a9.294 9.294 0 004.647 1.246c1.642 0 3.25-.426 4.667-1.246l43.885-25.582c2.87-1.672 4.23-4.764 4.23-8.083V38.407c0-3.319-1.36-6.414-4.229-8.073zM77.91 81.445c-11.726 0-14.309-3.235-15.17-9.066-.1-.628-.633-1.379-1.272-1.379h-5.731c-.709 0-1.279.86-1.279 1.566 0 7.466 4.059 16.512 23.453 16.512 14.039 0 22.088-5.455 22.088-15.109 0-9.572-6.467-12.084-20.082-13.886-13.762-1.819-15.16-2.738-15.16-5.962 0-2.658 1.184-6.203 11.374-6.203 9.105 0 12.461 1.954 13.842 8.091.118.577.645.991 1.24.991h5.754c.354 0 .692-.143.94-.396.24-.272.367-.613.335-.979-.891-10.568-7.912-15.493-22.112-15.493-12.631 0-20.166 5.334-20.166 14.275 0 9.698 7.497 12.378 19.622 13.577 14.505 1.422 15.633 3.542 15.633 6.395 0 4.955-3.978 7.066-13.309 7.066z"
-                        />
-                      </svg>
+                      <Img
+                        src="./cypress.webp"
+                        alt="cypress"
+                        className="skills-card-img"
+                      />
                     </div>
-                    <div>NodeJs</div>
+                    <div className="skills-card-name">Cypress</div>
                   </div>
-                  <div className="skillsbox" data-aos="fade-up">
-                    <div>
-                      <Img src="./cypress.webp" alt="cypress" />
-                    </div>
-                    <div>Cypress</div>
-                  </div>
-                  <div className="skillsbox" data-aos="fade-up">
-                    <div class="skills-card-img">
+                  <div className="skillsbox skills-card" data-aos="fade-up">
+                    <div className="skills-card-img">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 128 128"
@@ -613,11 +644,11 @@ function App() {
                         />
                       </svg>
                     </div>
-                    <div class="skills-card-name">npm</div>
+                    <div className="skills-card-name">npm</div>
                   </div>
 
-                  <div className="skillsbox" data-aos="fade-up">
-                    <div class="skills-card-img">
+                  <div className="skillsbox skills-card" data-aos="fade-up">
+                    <div className="skills-card-img">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 128 128"
@@ -628,10 +659,10 @@ function App() {
                         />
                       </svg>
                     </div>
-                    <div class="skills-card-name">Git</div>
+                    <div className="skills-card-name">Git</div>
                   </div>
-                  <div className="skillsbox" data-aos="fade-up">
-                    <div class="skills-card-img" style={{ padding: "3px" }}>
+                  <div className="skillsbox skills-card" data-aos="fade-up">
+                    <div className="skills-card-img" style={{ padding: "3px" }}>
                       <svg
                         viewBox="-11.9 -2 1003.9 995.6"
                         xmlns="http://www.w3.org/2000/svg"
@@ -654,7 +685,7 @@ function App() {
                         />
                       </svg>
                     </div>
-                    <div class="skills-card-name">Visual Studio</div>
+                    <div className="skills-card-name">Visual Studio</div>
                   </div>
                 </Box>
               </TabPanel>
@@ -1021,9 +1052,8 @@ function App() {
       </div>
 
       <div id="projects" className="project" data-aos="flip-right">
-        <div>
-          <h1>PROJECTS</h1>
-        </div>
+        <h1>PROJECTS</h1>
+
         <Box
           display={"grid"}
           gridTemplateColumns={{
@@ -1647,9 +1677,11 @@ function App() {
               src="https://github-stats-alpha.vercel.app/api?username=sushantshekhar82&cc=2e3440&tc=fff&ic=fff&bc=gray"
               alt="sushantshekhar82"
             />
-            <Img
-              src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=sushantshekhar82&theme=nord_dark"
+
+            <img
+              src="https://github-readme-stats.vercel.app/api/top-langs?username=sushantshekhar82&theme=nord_dark"
               alt="sushantshekhar82"
+              id="github-top-langs"
             />
           </div>
         </center>
@@ -1695,10 +1727,10 @@ function App() {
       <div id="contact" className="contact1" data-aos="flip-left">
         <div className="hideform">
           <Img
-            src="https://avighnaclasses.com/wp-content/uploads/2022/12/81732-contact-us.gif"
+            src="./contact.gif"
             width="500px"
             height="auto"
-            alt="form"
+            alt="contact_form_gif_image"
           />
         </div>
         <div className="form">

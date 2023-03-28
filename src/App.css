@@ -113,7 +113,7 @@ html{
   padding-bottom: 5px;
 }
 
-.about1{
+#about{
   display: grid;
  grid-template-columns: 100%;
  grid-template-rows: 100px auto;
@@ -127,7 +127,7 @@ html{
 height: auto;
 width: 100%;
 }
-.about1>div>h1{
+#about>h1{
   font-size: 50px;
   font-weight: bold;
   background: -webkit-linear-gradient(#020092 ,  #f0087c);
@@ -171,7 +171,7 @@ height: auto;
 width: 100%;
 padding: 10px;
 }
-.skill>div>h1{
+.skill>h1{
   font-size: 50px;
   font-weight: bold;
   background: -webkit-linear-gradient(#009245 ,  #FCEE21);
@@ -234,7 +234,7 @@ animation: animate3 6s linear infinite; */
   text-align: center;
   gap: 10px;
 }
-.project>div>h1{
+.project>h1{
   font-size: 50px;
   font-weight: bold;
   background: -webkit-linear-gradient(#eeff01 ,  #0465d3);
@@ -1108,6 +1108,10 @@ font-weight: bold;
            margin-left: 50px;
             animation:  animate5 4s linear infinite;
           
+          }
+          .gradient{
+            font-size: 35px;
+           font-weight: bold;
           }
 
         /* .box1::after{
