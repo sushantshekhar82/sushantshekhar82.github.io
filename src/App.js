@@ -1246,7 +1246,7 @@ function App() {
                   </svg>
                 </a>{" "}
                 <a
-                  href="https://myntraclonedecember.netlify.app/"
+                  href="https://643a3032ae40174fd1a8f66a--myntrawebproject.netlify.app/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -1424,7 +1424,7 @@ function App() {
                   </svg>
                 </a>{" "}
                 <a
-                  href="https://monumental-cassata-c694c6.netlify.app/"
+                  href="https://bluemercury-project.vercel.app/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -1506,7 +1506,7 @@ function App() {
                   </svg>
                 </a>{" "}
                 <a
-                  href="https://parallel-cast-unit4-project.netlify.app/"
+                  href="https://wrike-project.vercel.app/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -1584,7 +1584,7 @@ function App() {
                   </svg>
                 </a>{" "}
                 <a
-                  href="https://fancy-twilight-33906a.netlify.app/"
+                  href="https://jefit-com.vercel.app/"
                   target="_blank"
                   rel="noreferrer"
                 >

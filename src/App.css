@@ -319,7 +319,7 @@ animation: animate3 6s linear infinite; */
 }
 
 .gradient{
-  font-size: 50px;
+  font-size: 30px;
   font-weight: bold;
   background: -webkit-linear-gradient(#009245 ,  #FCEE21);
   background-clip: text;
@@ -1110,7 +1110,7 @@ font-weight: bold;
           
           }
           .gradient{
-            font-size: 35px;
+            font-size: 30px;
            font-weight: bold;
           }
 
