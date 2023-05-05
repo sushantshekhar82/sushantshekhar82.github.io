@@ -22,6 +22,7 @@ import { useState } from "react";
 import "./App.css";
 import { useToast } from "@chakra-ui/react";
 import React from "react";
+import axios from "axios"
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { FiPhoneCall } from "react-icons/fi";
@@ -40,8 +41,8 @@ function App() {
   const [click, setClick] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [messsage, setMessage] = useState("");
-
+  const [message, setMessage] = useState("");
+  const [load,setload]=useState(false)
   function downloadFile() {
     let link = document.createElement("a");
     link.download = "Sushant_Shekhar_Resume.pdf";
@@ -64,6 +65,56 @@ function App() {
       backdropFilter="blur(10px) hue-rotate(90deg)"
     />
   );
+  const handleuser=()=>{
+    {
+      if (name !== "" && email !== "" && message !== "") {
+        let obj={
+          name,
+          email,
+          message
+        }
+      axios.post("https://aggressive-ring-cow.cyclic.app/",obj).then(function (response) {
+       
+      toast({
+        title: "Wait...",
+
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
+        toast({
+          title: "Thank you , I will connect soon",
+
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+       
+       
+      })
+      .catch(function (error) {
+        toast({
+          title: "Error Try after some time",
+
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+       
+      })
+     
+       
+      } else {
+        toast({
+          title: "Enter all Fields",
+
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+      }
+    }
+  }
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [overlay, setOverlay] = React.useState(<OverlayOne />);
@@ -1734,7 +1785,7 @@ function App() {
           />
         </div>
         <div className="form">
-          <Text>First Name</Text>
+          <Text>Full Name</Text>
           <input
             type="text"
             value={name}
@@ -1752,34 +1803,16 @@ function App() {
           />
           <Text>Leave Your Message here</Text>
           <textarea
-            value={messsage}
+            value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Leave your messsage here"
+            placeholder="Leave your message here"
           ></textarea>
           <br />
           <button
-            onClick={() => {
-              if (name !== "" && email !== "" && messsage !== "") {
-                toast({
-                  title: "Thank you , I will connect soon",
-
-                  status: "success",
-                  duration: 5000,
-                  isClosable: true,
-                });
-              } else {
-                toast({
-                  title: "Enter all Fields",
-
-                  status: "error",
-                  duration: 5000,
-                  isClosable: true,
-                });
-              }
-            }}
+            onClick={handleuser}
             class="button-21"
           >
-            Submit
+         Submit
           </button>
         </div>
       </div>
