@@ -336,7 +336,7 @@ function App() {
           <div>
             <div className="box">
               <h2 id="user-detail-intro">
-                About:-Innovative, solution-driven web developer with
+                An Innovative, solution-driven web developer with
                 proficiency in MERN stack and capable of writing
                 production-ready code using HTML, CSS, and JavaScript. Proven
                 experience in developing multiple web-based applications with
@@ -1273,6 +1273,11 @@ function App() {
               </h2>
               <span style={{ marginTop: "5px" }} class="project-tech-stack">
                 <button class="button-21">React</button>
+                <button class="button-21">Redux</button>
+                <button class="button-21">MongoDb</button>
+                <button class="button-21">ExpressJs</button>
+                <button class="button-21">NodeJs</button>
+                <button class="button-21">Redux thunk</button>
                 <button class="button-21">Javascript</button>
                 <button class="button-21">Json Server</button>
                 <button class="button-21">Bootstrap 4</button>
@@ -1297,7 +1302,7 @@ function App() {
                   </svg>
                 </a>{" "}
                 <a
-                  href="https://643a3032ae40174fd1a8f66a--myntrawebproject.netlify.app/"
+                  href="https://myntrawebproject.netlify.app/"
                   target="_blank"
                   rel="noreferrer"
                 >
