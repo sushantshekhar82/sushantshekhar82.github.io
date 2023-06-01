@@ -138,29 +138,30 @@ function App() {
           <ul
             id="navitems"
             className={click ? "#navitems" : "#navitems active"}
+           
           >
             <li>
-              <a href="#home" className="nav-link home">
+              <a href="#home" className="nav-link home"  onClick={() => setClick(!click)}>
                 Home
               </a>
             </li>
             <li>
-              <a href="#about" className="nav-link about">
+              <a href="#about" className="nav-link about"  onClick={() => setClick(!click)}>
                 About
               </a>
             </li>
             <li>
-              <a href="#skills" className="nav-link skills">
+              <a href="#skills" className="nav-link skills"  onClick={() => setClick(!click)}>
                 Skills
               </a>
             </li>
             <li>
-              <a href="#projects" className="nav-link projects">
+              <a href="#projects" className="nav-link projects"  onClick={() => setClick(!click)}>
                 Projects
               </a>
             </li>
             <li>
-              <a href="#contact" className="nav-link contact">
+              <a href="#contact" className="nav-link contact"  onClick={() => setClick(!click)}>
                 Contact
               </a>
             </li>
@@ -1302,7 +1303,7 @@ function App() {
                   </svg>
                 </a>{" "}
                 <a
-                  href="https://myntrawebproject.netlify.app/"
+                  href="https://myntracloneproject.vercel.app/"
                   target="_blank"
                   rel="noreferrer"
                 >
