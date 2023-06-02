@@ -618,6 +618,12 @@ function App() {
                   </div>
                   <div className="skillsbox skills-card" data-aos="fade-up">
                     <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 32 32"><defs><linearGradient id="A" x1="811.527" y1="574.895" x2="665.255" y2="573.732" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#366a96"/><stop offset="1" stop-color="#3679b0"/></linearGradient><linearGradient id="B" x1="862.824" y1="642.176" x2="573.276" y2="642.176" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffc836"/><stop offset="1" stop-color="#ffe873"/></linearGradient></defs><g transform="matrix(.1617 0 0 .158089 -107.53764 -81.66187)"><path d="M716.255 544.487c0-13.623 3.653-21.034 23.822-24.563 13.693-2.4 31.25-2.7 47.627 0 12.935 2.135 23.822 11.77 23.822 24.563v44.945c0 13.182-10.57 23.98-23.822 23.98h-47.627c-16.164 0-29.787 13.782-29.787 29.363v21.564h-16.376c-13.852 0-21.917-9.988-25.305-23.964-4.57-18.776-4.376-29.963 0-47.945 3.794-15.687 15.917-23.964 29.77-23.964h65.52v-6h-47.645v-17.98z" fill="url(#A)"/><path d="M811.527 688.32c0 13.623-11.823 20.523-23.822 23.964-18.052 5.188-32.54 4.394-47.627 0-12.6-3.67-23.822-11.17-23.822-23.964v-44.945c0-12.935 10.782-23.98 23.822-23.98h47.627c15.864 0 29.787-13.71 29.787-29.963v-20.964h17.858c13.87 0 20.4 10.305 23.822 23.964 4.764 18.97 4.976 33.157 0 47.945-4.817 14.364-9.97 23.964-23.822 23.964H763.9v6h47.627v17.98z" fill="url(#B)"/><path d="M728.166 541.505c0-4.976 3.988-9 8.93-9 4.923 0 8.93 4.023 8.93 9 0 4.96-4.006 8.982-8.93 8.982-4.94 0-8.93-4.023-8.93-8.982zm53.59 149.798c0-4.96 4.006-8.982 8.93-8.982 4.94 0 8.93 4.023 8.93 8.982 0 4.976-3.988 9-8.93 9-4.923 0-8.93-4.023-8.93-9z" fill="#fff"/></g></svg>
+                    </div>
+                    <div className="skills-card-name">Python</div>
+                  </div>
+                  <div className="skillsbox skills-card" data-aos="fade-up">
+                    <div>
                       <Img
                         src="./Typescript.png"
                         alt="Typescript"
@@ -1120,6 +1126,110 @@ function App() {
           <div className="projectbox project-card" data-aos="zoom-in-up">
             <div>
               <Img
+                src="./myntraclone.jpeg"
+                alt="myntraclone"
+                borderRadius={"10px"}
+                onClick={() => {
+                  setOverlay(<OverlayOne />);
+                  onOpen();
+                }}
+              />
+            </div>
+            <Modal isCentered isOpen={isOpen} onClose={onClose}>
+              {overlay}
+              <ModalContent>
+                <ModalHeader>Myntra Clone</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                  <Img
+                    src="./myntraclone.jpeg"
+                    alt="myntraclone"
+                    borderRadius={"10px"}
+                  />
+                </ModalBody>
+                <ModalFooter>
+                  <Button onClick={onClose}>Close</Button>
+                </ModalFooter>
+              </ModalContent>
+            </Modal>
+            <div>
+              <center>
+                <h1
+                  style={{ fontSize: "30px", lineHeight: "25px" }}
+                  class="project-title"
+                >
+                  Myntra Clone
+                </h1>
+              </center>
+              <h2
+                style={{
+                  fontSize: "18px",
+                  lineHeight: "25px",
+                  marginTop: "10px",
+                }}
+                class="project-description"
+              >
+                Myntra is a famous branded cloths Ecommerce website which gives
+                you wide varieties of fashionable and branded clothes and many
+                more.Here you can shop any items very easily.
+              </h2>
+              <span style={{ marginTop: "5px" }} class="project-tech-stack">
+                <button class="button-21">React</button>
+                <button class="button-21">Redux</button>
+                <button class="button-21">MongoDb</button>
+                <button class="button-21">ExpressJs</button>
+                <button class="button-21">NodeJs</button>
+                <button class="button-21">Redux thunk</button>
+                <button class="button-21">Javascript</button>
+                <button class="button-21">Jsonwebtoken</button>
+                <button class="button-21">Bcrypt</button>
+                <button class="button-21">Bootstrap 4</button>
+                <button class="button-21">Chakra UI</button>
+              </span>
+              <span className="github project-github-link">
+                <a
+                  href="https://github.com/sushantshekhar82/Myntra.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="Black"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z" />
+                  </svg>
+                </a>{" "}
+                <a
+                  href="https://myntracloneproject.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-eye project-deployed-link "
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+          <div className="projectbox project-card" data-aos="zoom-in-up">
+            <div>
+              <Img
                 src="https://user-images.githubusercontent.com/105901300/223351210-861d3165-fe3a-407e-a61e-0c277d265a84.png"
                 alt="Productify.com"
                 borderRadius={"10px"}
@@ -1222,110 +1332,7 @@ function App() {
               </span>
             </div>
           </div>
-          <div className="projectbox project-card" data-aos="zoom-in-up">
-            <div>
-              <Img
-                src="./myntraclone.jpeg"
-                alt="myntraclone"
-                borderRadius={"10px"}
-                onClick={() => {
-                  setOverlay(<OverlayOne />);
-                  onOpen();
-                }}
-              />
-            </div>
-            <Modal isCentered isOpen={isOpen} onClose={onClose}>
-              {overlay}
-              <ModalContent>
-                <ModalHeader>Myntra Clone</ModalHeader>
-                <ModalCloseButton />
-                <ModalBody>
-                  <Img
-                    src="./myntraclone.jpeg"
-                    alt="myntraclone"
-                    borderRadius={"10px"}
-                  />
-                </ModalBody>
-                <ModalFooter>
-                  <Button onClick={onClose}>Close</Button>
-                </ModalFooter>
-              </ModalContent>
-            </Modal>
-            <div>
-              <center>
-                <h1
-                  style={{ fontSize: "30px", lineHeight: "25px" }}
-                  class="project-title"
-                >
-                  Myntra Clone
-                </h1>
-              </center>
-              <h2
-                style={{
-                  fontSize: "18px",
-                  lineHeight: "25px",
-                  marginTop: "10px",
-                }}
-                class="project-description"
-              >
-                Myntra is a famous branded cloths Ecommerce website which gives
-                you wide varieties of fashionable and branded clothes and many
-                more.Here you can shop any items very easily.
-              </h2>
-              <span style={{ marginTop: "5px" }} class="project-tech-stack">
-                <button class="button-21">React</button>
-                <button class="button-21">Redux</button>
-                <button class="button-21">MongoDb</button>
-                <button class="button-21">ExpressJs</button>
-                <button class="button-21">NodeJs</button>
-                <button class="button-21">Redux thunk</button>
-                <button class="button-21">Javascript</button>
-                <button class="button-21">Json Server</button>
-                <button class="button-21">Bootstrap 4</button>
-                <button class="button-21">Render</button>
-                <button class="button-21">Chakra UI</button>
-              </span>
-              <span className="github project-github-link">
-                <a
-                  href="https://github.com/sushantshekhar82/Myntra.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    fill="Black"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z" />
-                  </svg>
-                </a>{" "}
-                <a
-                  href="https://myntracloneproject.vercel.app/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="feather feather-eye project-deployed-link "
-                  >
-                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                    <circle cx="12" cy="12" r="3"></circle>
-                  </svg>
-                </a>
-              </span>
-            </div>
-          </div>
+          
           <div className="projectbox project-card" data-aos="zoom-in-up">
             <div>
               <Img
